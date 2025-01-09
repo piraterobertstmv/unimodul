@@ -19,19 +19,19 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <div className="flex space-x-6">
               <a href="#about" className="nav-link">
-                About
+                Nosotros
               </a>
               <a href="#products" className="nav-link">
-                Products
+                Productos
               </a>
               <a href="#stories" className="nav-link">
-                Stories
+                Historias
               </a>
               <a href="#contact" className="nav-link">
-                Contact
+                Contacto
               </a>
             </div>
-            <Button className="cta-button">Design Now</Button>
+            <Button className="cta-button">Diseñar Ahora</Button>
           </div>
 
           {/* Mobile menu button */}
@@ -54,31 +54,31 @@ export const Navbar = () => {
                 className="block px-3 py-2 nav-link"
                 onClick={() => setIsOpen(false)}
               >
-                About
+                Nosotros
               </a>
               <a
                 href="#products"
                 className="block px-3 py-2 nav-link"
                 onClick={() => setIsOpen(false)}
               >
-                Products
+                Productos
               </a>
               <a
                 href="#stories"
                 className="block px-3 py-2 nav-link"
                 onClick={() => setIsOpen(false)}
               >
-                Stories
+                Historias
               </a>
               <a
                 href="#contact"
                 className="block px-3 py-2 nav-link"
                 onClick={() => setIsOpen(false)}
               >
-                Contact
+                Contacto
               </a>
               <div className="px-3 py-2">
-                <Button className="cta-button w-full">Design Now</Button>
+                <Button className="cta-button w-full">Diseñar Ahora</Button>
               </div>
             </div>
           </div>

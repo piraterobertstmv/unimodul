@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  "https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7",
-  "https://images.unsplash.com/photo-1520733893896-0dd0b6549309",
-  "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a",
+  "/lovable-uploads/6a48b2d3-32fe-425d-849d-4e8009682f8f.png",
+  "/lovable-uploads/4eeca0a2-9ade-44a0-bd17-d6713900e92c.png",
+  "/lovable-uploads/39040f8f-8abc-474e-9e24-00dc29aa1562.png",
+  "/lovable-uploads/d95ca2e9-9e49-4242-a8e0-e6f9172ee91b.png",
+  "/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png"
 ];
 
 export const ImageSlider = () => {

@@ -7,7 +7,7 @@ export const Hero = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1520733893896-0dd0b6549309?auto=format&fit=crop&q=80')",
+            "url('/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png')",
         }}
       >
         <div className="absolute inset-0 hero-overlay" />

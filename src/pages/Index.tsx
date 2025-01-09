@@ -58,7 +58,7 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7')",
+              "url('/lovable-uploads/39040f8f-8abc-474e-9e24-00dc29aa1562.png')",
           }}
         >
           <div className="absolute inset-0 hero-overlay" />
@@ -86,17 +86,17 @@ const Index = () => {
             {
               title: "Studio",
               description: "Perfect for personal space and creativity",
-              image: "https://images.unsplash.com/photo-1520733893896-0dd0b6549309",
+              image: "/lovable-uploads/6a48b2d3-32fe-425d-849d-4e8009682f8f.png",
             },
             {
               title: "Office",
               description: "Optimized for productive work environments",
-              image: "https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7",
+              image: "/lovable-uploads/4eeca0a2-9ade-44a0-bd17-d6713900e92c.png",
             },
             {
               title: "Home",
               description: "Ideal for comfortable family living",
-              image: "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a",
+              image: "/lovable-uploads/d95ca2e9-9e49-4242-a8e0-e6f9172ee91b.png",
             },
           ].map((product) => (
             <div
@@ -175,7 +175,7 @@ const Index = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1524230572899-a752b3835840"
+                src="/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png"
                 alt="Sustainable Design"
                 className="rounded-lg shadow-lg"
               />

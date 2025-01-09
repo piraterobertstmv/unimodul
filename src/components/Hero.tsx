@@ -15,10 +15,10 @@ export const Hero = () => {
       <div className="relative container mx-auto px-4 h-full flex items-center">
         <div className="max-w-2xl animate-fadeIn">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Consigue un nuevo espacio para vivir.
+            Consigue un nuevo espacio para vivir
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">
-            Unimodul ofrece soluciones modulares versátiles, elegantes y sostenibles.
+            Unimodul ofrece soluciones modulares versátiles, elegantes y sostenibles
           </p>
           <Button className="cta-button text-lg">Explorar Ahora</Button>
         </div>

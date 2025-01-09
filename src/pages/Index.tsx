@@ -28,7 +28,7 @@ const Index = () => {
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            La variedad es la esencia de la vida – La gama de Unimodul es variedad.
+            La variedad es la esencia de la vida – La gama de Unimodul es variedad
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -71,7 +71,7 @@ const Index = () => {
               Conviértete en Diseñador
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Diseña tu propio espacio modular con facilidad.
+              Diseña tu propio espacio modular con facilidad
             </p>
             <Button className="cta-button">Diseñar Ahora</Button>
           </div>
@@ -193,7 +193,7 @@ const Index = () => {
             <div>
               <h3 className="text-2xl font-bold mb-4">unimodul</h3>
               <p className="text-gray-400 max-w-md">
-                Escribe tu propio futuro – Te damos el espacio para vivirlo.
+                Escribe tu propio futuro – Te damos el espacio para vivirlo
               </p>
             </div>
             <div className="grid grid-cols-2 gap-8">

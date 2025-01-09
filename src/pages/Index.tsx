@@ -58,7 +58,7 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1487958449943-2429e8be8625')",
+              "url('https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7')",
           }}
         >
           <div className="absolute inset-0 hero-overlay" />
@@ -86,17 +86,17 @@ const Index = () => {
             {
               title: "Studio",
               description: "Perfect for personal space and creativity",
-              image: "https://images.unsplash.com/photo-1524230572899-a752b3835840",
+              image: "https://images.unsplash.com/photo-1520733893896-0dd0b6549309",
             },
             {
               title: "Office",
               description: "Optimized for productive work environments",
-              image: "https://images.unsplash.com/photo-1497366216548-37526070297c",
+              image: "https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7",
             },
             {
               title: "Home",
               description: "Ideal for comfortable family living",
-              image: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09",
+              image: "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a",
             },
           ].map((product) => (
             <div

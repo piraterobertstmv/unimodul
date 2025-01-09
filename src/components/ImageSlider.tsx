@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-  "https://images.unsplash.com/photo-1501854140801-50d01698950b",
-  "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3",
+  "https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7",
+  "https://images.unsplash.com/photo-1520733893896-0dd0b6549309",
+  "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a",
 ];
 
 export const ImageSlider = () => {

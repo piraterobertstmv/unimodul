@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { Link } from "react-router-dom";
 
 const Stories = () => {
   const stories = [
@@ -6,13 +7,15 @@ const Stories = () => {
       title: "De Sueño a Realidad",
       author: "María González",
       quote: "Unimodul transformó mi pequeño espacio en un hogar perfecto.",
-      image: "/lovable-uploads/39040f8f-8abc-474e-9e24-00dc29aa1562.png"
+      image: "/lovable-uploads/39040f8f-8abc-474e-9e24-00dc29aa1562.png",
+      link: "/historia-1"
     },
     {
       title: "Innovación en Diseño",
       author: "Carlos Ruiz",
       quote: "La flexibilidad de los módulos superó todas mis expectativas.",
-      image: "/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png"
+      image: "/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png",
+      link: "/historia-2"
     }
   ];
 
@@ -30,9 +33,10 @@ const Stories = () => {
 
           <div className="grid md:grid-cols-2 gap-12 mt-12">
             {stories.map((story, index) => (
-              <div
+              <Link
+                to={story.link}
                 key={story.title}
-                className="relative group animate-scaleIn"
+                className="relative group animate-scaleIn cursor-pointer"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="relative overflow-hidden rounded-lg shadow-lg">
@@ -48,7 +52,7 @@ const Stories = () => {
                     <p className="text-white/80">- {story.author}</p>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

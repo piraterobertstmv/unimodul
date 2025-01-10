@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Models from "./pages/Models";
 import Stories from "./pages/Stories";
+import SuccessStory1 from "./pages/SuccessStory1";
+import SuccessStory2 from "./pages/SuccessStory2";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -57,6 +59,8 @@ const App = () => {
             <Route path="/productos/mod-one" element={<ModOne />} />
             <Route path="/productos/mod-two" element={<ModTwo />} />
             <Route path="/historias" element={<Stories />} />
+            <Route path="/historia-1" element={<SuccessStory1 />} />
+            <Route path="/historia-2" element={<SuccessStory2 />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

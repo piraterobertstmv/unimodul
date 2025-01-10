@@ -41,6 +41,9 @@ export default {
         sans: ["Inter", "sans-serif"],
         heading: ["Poppins", "sans-serif"],
       },
+      translate: {
+        'z-10': '10px',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

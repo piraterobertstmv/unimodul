@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { ArrowRight, Check, Clock, Headphones, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Process = () => {
   return (
@@ -107,9 +108,9 @@ const Process = () => {
             ].map((phase, index) => (
               <div 
                 key={index}
-                className="mb-16 last:mb-0 animate-fadeIn"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="relative mb-16 last:mb-0 pl-8 border-l-2 border-primary"
               >
+                <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary"></div>
                 <h3 className="text-2xl font-bold mb-6 text-secondary">
                   {phase.phase}
                 </h3>
@@ -140,9 +141,11 @@ const Process = () => {
             <p className="text-lg mb-8 max-w-2xl mx-auto animate-fadeIn">
               Déjanos encargarnos de todo mientras tú te relajas y esperas ver tu sueño convertirse en realidad.
             </p>
-            <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 animate-scaleIn">
-              Contactar Ahora
-            </button>
+            <Link to="/contact">
+              <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 animate-scaleIn">
+                Contactar Ahora
+              </button>
+            </Link>
           </div>
         </section>
       </main>

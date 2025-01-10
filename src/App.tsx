@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Products from "./pages/Products";
+import Models from "./pages/Models";
 import Stories from "./pages/Stories";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
@@ -14,7 +14,6 @@ import BlogPost from "./pages/BlogPost";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Process from "./pages/Process";
-import Models from "./pages/Models";
 import ModStudio from "./pages/ModStudio";
 import ModOne from "./pages/ModOne";
 import ModTwo from "./pages/ModTwo";
@@ -53,7 +52,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/nosotros" element={<About />} />
-            <Route path="/productos" element={<Products />} />
+            <Route path="/modelos" element={<Models />} />
             <Route path="/productos/mod-studio" element={<ModStudio />} />
             <Route path="/productos/mod-one" element={<ModOne />} />
             <Route path="/productos/mod-two" element={<ModTwo />} />
@@ -64,7 +63,6 @@ const App = () => {
             <Route path="/terminos" element={<Terms />} />
             <Route path="/privacidad" element={<Privacy />} />
             <Route path="/proceso" element={<Process />} />
-            <Route path="/modelos" element={<Models />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

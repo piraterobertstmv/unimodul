@@ -19,7 +19,7 @@ const Index = () => {
       {/* Title Section */}
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center animate-slideInLeft">
+          <h2 className="text-4xl md:text-5xl font-bold text-center animate-on-scroll opacity-0 translate-x-[-100%] transition-all duration-500">
             Nuestros Modelos
           </h2>
         </div>

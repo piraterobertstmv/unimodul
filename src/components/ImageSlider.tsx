@@ -28,30 +28,32 @@ export const ImageSlider = () => {
   };
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden">
+    <div className="relative w-full h-[500px] overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
       {images.map((image, index) => (
         <div
           key={image}
-          className={`absolute w-full h-full transition-opacity duration-500 ${
-            index === currentIndex ? "opacity-100" : "opacity-0"
+          className={`absolute w-full h-full transition-all duration-700 ${
+            index === currentIndex 
+              ? "opacity-100 scale-100" 
+              : "opacity-0 scale-95"
           }`}
         >
           <img
             src={image}
             alt={`Slide ${index + 1}`}
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
           />
         </div>
       ))}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-colors"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-all duration-300 hover:scale-110"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-all duration-300 hover:scale-110"
       >
         <ChevronRight className="w-6 h-6" />
       </button>
@@ -60,8 +62,8 @@ export const ImageSlider = () => {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              index === currentIndex ? "bg-white" : "bg-white/50"
+            className={`w-2 h-2 rounded-full transition-all duration-300 hover:scale-150 ${
+              index === currentIndex ? "bg-white scale-125" : "bg-white/50"
             }`}
           />
         ))}

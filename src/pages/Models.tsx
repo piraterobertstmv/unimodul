@@ -30,26 +30,34 @@ const Products = () => {
     {
       title: "Particulares",
       description: "Soluciones habitacionales para individuos y familias",
-      icon: "🏠"
+      icon: "🏠",
+      route: "/particulares"
     },
     {
       title: "Campings",
       description: "Módulos adaptados para instalaciones turísticas",
-      icon: "⛺"
+      icon: "⛺",
+      route: "/campings"
     },
     {
       title: "Empresas",
       description: "Espacios comerciales y oficinas modulares",
-      icon: "🏢"
+      icon: "🏢",
+      route: "/empresas"
     },
     {
       title: "Inversores",
       description: "Oportunidades de inversión en proyectos modulares",
-      icon: "💰"
+      icon: "💰",
+      route: "/inversores"
     }
   ];
 
   const handleModelClick = (route: string) => {
+    navigate(route);
+  };
+
+  const handleCategoryClick = (route: string) => {
     navigate(route);
   };
 
@@ -68,6 +76,7 @@ const Products = () => {
                   key={category.title}
                   className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
                   style={{ animationDelay: `${index * 100}ms` }}
+                  onClick={() => handleCategoryClick(category.route)}
                 >
                   <div className="text-4xl mb-4">{category.icon}</div>
                   <h3 className="text-xl font-bold mb-2">{category.title}</h3>

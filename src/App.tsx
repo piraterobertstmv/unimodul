@@ -19,6 +19,10 @@ import Process from "./pages/Process";
 import ModStudio from "./pages/ModStudio";
 import ModOne from "./pages/ModOne";
 import ModTwo from "./pages/ModTwo";
+import Particulares from "./pages/Particulares";
+import Campings from "./pages/Campings";
+import Empresas from "./pages/Empresas";
+import Inversores from "./pages/Inversores";
 
 const queryClient = new QueryClient();
 
@@ -67,6 +71,10 @@ const App = () => {
             <Route path="/terminos" element={<Terms />} />
             <Route path="/privacidad" element={<Privacy />} />
             <Route path="/proceso" element={<Process />} />
+            <Route path="/particulares" element={<Particulares />} />
+            <Route path="/campings" element={<Campings />} />
+            <Route path="/empresas" element={<Empresas />} />
+            <Route path="/inversores" element={<Inversores />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

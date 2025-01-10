@@ -37,10 +37,10 @@ const Contact = () => {
       };
 
       await emailjs.send(
-        'YOUR_SERVICE_ID', // You'll need to replace this with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // You'll need to replace this with your EmailJS template ID
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID',
         templateParams,
-        'YOUR_PUBLIC_KEY' // You'll need to replace this with your EmailJS public key
+        'YOUR_PUBLIC_KEY'
       );
 
       toast({
@@ -78,7 +78,7 @@ const Contact = () => {
                     control={form.control}
                     name="name"
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className="animate-scaleIn">
                         <FormLabel>Nombre</FormLabel>
                         <FormControl>
                           <Input placeholder="Tu nombre" {...field} />
@@ -91,7 +91,7 @@ const Contact = () => {
                     control={form.control}
                     name="email"
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className="animate-scaleIn delay-100">
                         <FormLabel>Email</FormLabel>
                         <FormControl>
                           <Input placeholder="tu@email.com" {...field} />
@@ -104,7 +104,7 @@ const Contact = () => {
                     control={form.control}
                     name="message"
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className="animate-scaleIn delay-200">
                         <FormLabel>Mensaje</FormLabel>
                         <FormControl>
                           <Textarea
@@ -117,29 +117,31 @@ const Contact = () => {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" className="w-full">Enviar Mensaje</Button>
+                  <Button type="submit" className="w-full animate-scaleIn delay-300">
+                    Enviar Mensaje
+                  </Button>
                 </form>
               </Form>
             </div>
 
             {/* Contact Information */}
             <div className="space-y-8 animate-slideInRight">
-              <div className="flex items-start space-x-4">
-                <Mail className="w-6 h-6 text-primary mt-1" />
+              <div className="flex items-start space-x-4 hover:scale-105 transition-transform duration-300">
+                <Mail className="w-6 h-6 text-primary mt-1 animate-float" />
                 <div>
                   <h3 className="text-lg font-bold mb-1">Email</h3>
                   <p className="text-gray-600">614169737@unimodul.es</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <Phone className="w-6 h-6 text-primary mt-1" />
+              <div className="flex items-start space-x-4 hover:scale-105 transition-transform duration-300">
+                <Phone className="w-6 h-6 text-primary mt-1 animate-float delay-100" />
                 <div>
                   <h3 className="text-lg font-bold mb-1">Teléfono</h3>
                   <p className="text-gray-600">+34 614 16 97 37</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <MapPin className="w-6 h-6 text-primary mt-1" />
+              <div className="flex items-start space-x-4 hover:scale-105 transition-transform duration-300">
+                <MapPin className="w-6 h-6 text-primary mt-1 animate-float delay-200" />
                 <div>
                   <h3 className="text-lg font-bold mb-1">Ubicación</h3>
                   <p className="text-gray-600">

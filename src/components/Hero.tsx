@@ -1,9 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="relative h-screen">
       <div className="absolute inset-0 flex">
@@ -19,17 +17,18 @@ export const Hero = () => {
           <div className="absolute inset-0 hero-overlay" />
         </div>
         <div className="w-[20%] bg-black flex flex-col justify-end items-center pb-12 gap-6">
-          <button
-            onClick={() => navigate("/modelos")}
+          <Link
+            to="/productos"
             className="px-8 py-3 bg-white text-black font-heading hover:bg-black hover:text-white transition-all duration-300 rounded-lg text-lg tracking-wider"
           >
             MODELOS
-          </button>
-          <button
+          </Link>
+          <Link
+            to="/contacto"
             className="px-8 py-3 bg-white text-black font-heading hover:bg-black hover:text-white transition-all duration-300 rounded-lg text-lg tracking-wider"
           >
             CONTACTO
-          </button>
+          </Link>
         </div>
       </div>
       <div className="relative container mx-auto h-full flex items-center">

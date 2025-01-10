@@ -27,10 +27,10 @@ const ModTwo = () => {
             {/* Header Section */}
             <div className="text-center mb-12">
               <h1 className="text-5xl font-light mb-6">MOD|TWO</h1>
-              <p className="text-3xl font-light text-gray-800">€49,220</p>
+              <p className="text-3xl font-light text-gray-800">€1,000/m²</p>
+              <p className="text-lg text-gray-600 mt-2">35'x15' (10.7m x 4.6m)</p>
             </div>
 
-            {/* Main Image Carousel */}
             <div className="mb-16">
               <Carousel className="w-full">
                 <CarouselContent>
@@ -157,7 +157,7 @@ const ModTwo = () => {
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
                       <h3 className="text-white text-xl font-light">MOD|STUDIO</h3>
-                      <p className="text-white/80">Desde €18,600</p>
+                      <p className="text-white/80">€1,000/m²</p>
                     </div>
                   </div>
                 </Link>
@@ -170,7 +170,7 @@ const ModTwo = () => {
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
                       <h3 className="text-white text-xl font-light">MOD|ONE</h3>
-                      <p className="text-white/80">Desde €28,120</p>
+                      <p className="text-white/80">€1,000/m²</p>
                     </div>
                   </div>
                 </Link>

@@ -17,7 +17,7 @@ const Index = () => {
       <Hero />
 
       {/* Image Slider Section */}
-      <section className="section-padding container mx-auto px-4 animate-fadeIn">
+      <section className="section-padding container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Nuestros Diseños Modulares
         </h2>
@@ -25,7 +25,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="section-padding bg-gray-50 animate-slideInLeft">
+      <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             La variedad es la esencia de la vida – La gama de Unimodul es variedad
@@ -55,7 +55,7 @@ const Index = () => {
       </section>
 
       {/* Become a Designer Section */}
-      <section className="relative h-[500px] animate-scaleIn">
+      <section className="relative h-[500px]">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -79,7 +79,7 @@ const Index = () => {
       </section>
 
       {/* Product Offerings */}
-      <section className="section-padding container mx-auto px-4 animate-slideInRight">
+      <section className="section-padding container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Preparado para Diversas Historias
         </h2>
@@ -122,7 +122,7 @@ const Index = () => {
       {/* Design Process */}
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fadeIn">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Cómo Funciona: Módulos Unimodul
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
@@ -132,22 +132,9 @@ const Index = () => {
               "Producir",
               "Instalar",
             ].map((step, index) => (
-              <div 
-                key={step} 
-                className="text-center transform hover:scale-105 transition-all duration-500"
-                style={{
-                  animation: `fadeIn 0.5s ease-out forwards ${index * 0.2}s`,
-                  opacity: 0
-                }}
-              >
-                <div className="relative">
-                  <div 
-                    className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold
-                    before:content-[''] before:absolute before:w-full before:h-full before:bg-primary/30 before:rounded-full before:animate-ping"
-                  >
-                    {index + 1}
-                  </div>
-                  <div className="absolute -z-10 top-0 left-1/2 -translate-x-1/2 w-16 h-16 bg-primary/20 rounded-full blur-lg animate-pulse" />
+              <div key={step} className="text-center">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
+                  {index + 1}
                 </div>
                 <h3 className="text-xl font-bold mb-2">{step}</h3>
                 <p className="text-gray-600">
@@ -163,7 +150,7 @@ const Index = () => {
       </section>
 
       {/* Sustainability Section */}
-      <section className="section-padding animate-fadeIn">
+      <section className="section-padding">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -200,7 +187,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 animate-fadeIn">
+      <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>

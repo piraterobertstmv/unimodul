@@ -115,7 +115,7 @@ const ModOne = () => {
             <div className="mb-16">
               <h3 className="text-xl font-light mb-4">PLANOS</h3>
               <img
-                src="/lovable-uploads/d509b525-e877-46c9-ab28-adbdbc7128b5.png"
+                src="/lovable-uploads/4e221c77-b528-4a3b-b5fc-37bb71e2c69f.png"
                 alt="Plano arquitectónico"
                 className="w-full object-contain"
               />

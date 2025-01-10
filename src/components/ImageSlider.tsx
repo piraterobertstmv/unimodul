@@ -6,7 +6,13 @@ const images = [
   "/lovable-uploads/4eeca0a2-9ade-44a0-bd17-d6713900e92c.png",
   "/lovable-uploads/39040f8f-8abc-474e-9e24-00dc29aa1562.png",
   "/lovable-uploads/d95ca2e9-9e49-4242-a8e0-e6f9172ee91b.png",
-  "/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png"
+  "/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png",
+  "/lovable-uploads/9f46670e-d230-45c2-83fd-c50c86963d9f.png",
+  "/lovable-uploads/6fe0c0b8-e6d5-4666-b36e-6e86b1b2a372.png",
+  "/lovable-uploads/ad063972-7478-43de-bf95-957dde19de94.png",
+  "/lovable-uploads/c88e90b6-b364-41fb-b61f-beb182e090e0.png",
+  "/lovable-uploads/6b3e84fa-84a0-44af-8e48-9ed284c56602.png",
+  "/lovable-uploads/b8d7324b-eb18-4590-b2f2-9764ad2870f6.png"
 ];
 
 export const ImageSlider = () => {

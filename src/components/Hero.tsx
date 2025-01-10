@@ -21,7 +21,7 @@ export const Hero = () => {
         {!error ? (
           <Spline 
             className="w-full h-full"
-            scene="https://prod.spline.design/6PDxoyL-1szoHU9l/scene.splinecode"
+            scene="https://my.spline.design/liquidring-5c29547bf346749519e092c0deb4118d/"
             onLoad={handleSplineLoad}
             onError={handleSplineError}
           />

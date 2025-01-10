@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 text-white py-8 md:py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">unimodul</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-4">unimodul</h3>
             <p className="text-gray-400 max-w-md">
               Escribe tu propio futuro – Te damos el espacio para vivirlo
             </p>
@@ -60,11 +60,11 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p className="text-gray-400 text-sm text-center md:text-left">
             © 2024 Unimodul. Todos los derechos reservados.
           </p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
+          <div className="flex space-x-4">
             <a
               href="#"
               className="text-gray-400 hover:text-white transition-colors"

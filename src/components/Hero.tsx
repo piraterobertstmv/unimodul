@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
-    <div className="relative h-screen">
+    <div className="relative min-h-screen">
       <div className="absolute inset-0">
         <div
-          className="w-[80%] h-full bg-cover bg-center"
+          className="w-full md:w-[80%] h-full bg-cover bg-center"
           style={{
             backgroundImage:
               "url('/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png')",
@@ -16,12 +16,12 @@ export const Hero = () => {
         >
           <div className="absolute inset-0 hero-overlay" />
         </div>
-        <div className="absolute right-0 top-0 w-[20%] h-full bg-black" />
+        <div className="absolute right-0 top-0 w-full md:w-[20%] h-20 md:h-full bg-black" />
       </div>
 
-      <div className="relative container mx-auto h-full flex items-center">
+      <div className="relative container mx-auto h-full flex items-center px-4">
         <div className="w-full flex justify-end">
-          <div className="text-6xl font-bold tracking-wider animate-float flex flex-col items-start space-y-4">
+          <div className="text-4xl md:text-6xl font-bold tracking-wider animate-float flex flex-col items-start space-y-4">
             <span className="text-white">MODERN/</span>
             <span className="text-white">INNOVATIVE/</span>
             <span className="text-white">PREFAB.</span>
@@ -29,16 +29,16 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute right-0 bottom-12 w-[20%] flex flex-col items-center gap-6">
+      <div className="absolute bottom-12 w-full md:w-[20%] md:right-0 flex flex-col items-center gap-6 px-4">
         <Link
           to="/modelos"
-          className="px-8 py-3 bg-white text-black font-heading hover:bg-black hover:text-white transition-all duration-300 rounded-lg text-lg tracking-wider cursor-pointer"
+          className="w-full md:w-auto px-8 py-3 bg-white text-black font-heading hover:bg-black hover:text-white transition-all duration-300 rounded-lg text-lg tracking-wider cursor-pointer text-center"
         >
           MODELOS
         </Link>
         <Link
           to="/contacto"
-          className="px-8 py-3 bg-white text-black font-heading hover:bg-black hover:text-white transition-all duration-300 rounded-lg text-lg tracking-wider cursor-pointer"
+          className="w-full md:w-auto px-8 py-3 bg-white text-black font-heading hover:bg-black hover:text-white transition-all duration-300 rounded-lg text-lg tracking-wider cursor-pointer text-center"
         >
           CONTACTO
         </Link>

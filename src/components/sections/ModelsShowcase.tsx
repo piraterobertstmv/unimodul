@@ -54,7 +54,7 @@ export const ModelsShowcase = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative min-h-[600px] overflow-hidden section-transition">
+    <section ref={sectionRef} className="relative min-h-[400px] md:min-h-[600px] overflow-hidden section-transition">
       <div className="absolute inset-0 flex items-center justify-center">
         {models.map((model) => (
           <img
@@ -70,23 +70,23 @@ export const ModelsShowcase = () => {
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      <div className="relative container mx-auto px-4 py-24">
-        <div className="flex flex-col items-center justify-center min-h-[400px] text-white space-y-8">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+      <div className="relative container mx-auto px-4 py-12 md:py-24">
+        <div className="flex flex-col items-center justify-center min-h-[300px] md:min-h-[400px] text-white space-y-8">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
             {models.map((model) => (
               <div
                 key={model.id}
                 className={cn(
-                  'cursor-pointer transition-all duration-300',
+                  'cursor-pointer transition-all duration-300 text-center md:text-left',
                   activeModel === model.id
                     ? 'scale-110 opacity-100'
                     : 'opacity-70 hover:opacity-100'
                 )}
                 onMouseEnter={() => setActiveModel(model.id)}
-                onMouseLeave={() => setActiveModel(1)}
+                onTouchStart={() => setActiveModel(model.id)}
                 onClick={() => handleModelClick(model.route)}
               >
-                <h3 className="text-2xl font-bold">{model.name}</h3>
+                <h3 className="text-xl md:text-2xl font-bold">{model.name}</h3>
               </div>
             ))}
           </div>

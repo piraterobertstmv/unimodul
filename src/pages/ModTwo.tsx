@@ -117,11 +117,18 @@ const ModTwo = () => {
             {/* Planos Section */}
             <div className="mb-16">
               <h3 className="text-xl font-light mb-4">PLANOS</h3>
-              <img
-                src="/lovable-uploads/0370276d-23f1-4ed1-aec4-12823772854d.png"
-                alt="Plano arquitectónico"
-                className="w-full object-contain"
-              />
+              <div className="space-y-4">
+                <img
+                  src="/lovable-uploads/0370276d-23f1-4ed1-aec4-12823772854d.png"
+                  alt="Plano arquitectónico"
+                  className="w-full object-contain"
+                />
+                <img
+                  src="/lovable-uploads/3fde572c-b76a-4824-8521-a81b1d719aae.png"
+                  alt="Plano arquitectónico detallado"
+                  className="w-full object-contain"
+                />
+              </div>
             </div>
 
             {/* CTA Section */}

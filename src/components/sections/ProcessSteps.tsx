@@ -9,7 +9,7 @@ export const ProcessSteps = () => {
           </span>
         </h2>
         
-        <div className="relative">
+        <div className="grid md:grid-cols-3 gap-8 relative">
           {[
             {
               number: "01",
@@ -44,11 +44,10 @@ export const ProcessSteps = () => {
           ].map((step, index) => (
             <div 
               key={step.number}
-              className="relative bg-white rounded-lg p-8 shadow-lg mb-8 md:w-[85%] ml-auto"
+              className="relative bg-white rounded-lg p-8 shadow-lg"
               style={{ 
-                marginRight: `${index * 5}%`,
-                zIndex: 3 - index,
-                transform: `translateY(-${index * 40}px)`
+                marginTop: `${index * 40}px`,
+                zIndex: 3 - index
               }}
             >
               <div className="text-8xl font-bold text-primary/10 absolute -top-10 -left-4 z-0">

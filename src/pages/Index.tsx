@@ -4,6 +4,7 @@ import { ImageSlider } from "@/components/ImageSlider";
 import { Features } from "@/components/sections/Features";
 import { DesignerCTA } from "@/components/sections/DesignerCTA";
 import { ProductOfferings } from "@/components/sections/ProductOfferings";
+import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { Footer } from "@/components/sections/Footer";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -25,6 +26,7 @@ const Index = () => {
       <Features />
       <DesignerCTA />
       <ProductOfferings />
+      <ProcessSteps />
 
       {/* Sustainability Section */}
       <section className="section-padding">

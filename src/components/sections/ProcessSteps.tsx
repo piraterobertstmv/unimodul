@@ -44,10 +44,11 @@ export const ProcessSteps = () => {
           ].map((step, index) => (
             <div 
               key={step.number}
-              className="relative bg-white rounded-lg p-8 shadow-lg mb-8 md:w-[90%]"
+              className="relative bg-white rounded-lg p-8 shadow-lg mb-8 md:w-[85%] ml-auto"
               style={{ 
-                marginLeft: `${index * 5}%`,
-                zIndex: 3 - index
+                marginRight: `${index * 5}%`,
+                zIndex: 3 - index,
+                transform: `translateY(-${index * 40}px)`
               }}
             >
               <div className="text-8xl font-bold text-primary/10 absolute -top-10 -left-4 z-0">

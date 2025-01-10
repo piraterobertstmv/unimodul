@@ -32,13 +32,13 @@ export const Hero = () => {
       <div className="absolute bottom-8 md:bottom-12 w-full md:w-[20%] md:right-0 flex flex-col items-center gap-4 md:gap-6 px-4">
         <Link
           to="/modelos"
-          className="w-full md:w-auto px-8 py-3 bg-white text-black font-heading hover:bg-black hover:text-white transition-all duration-300 rounded-lg text-base md:text-lg tracking-wider cursor-pointer text-center"
+          className="w-48 px-8 py-3 bg-white text-black font-heading hover:bg-black hover:text-white transition-all duration-300 rounded-lg text-base md:text-lg tracking-wider cursor-pointer text-center"
         >
           MODELOS
         </Link>
         <Link
           to="/contacto"
-          className="w-full md:w-auto px-8 py-3 bg-white text-black font-heading hover:bg-black hover:text-white transition-all duration-300 rounded-lg text-base md:text-lg tracking-wider cursor-pointer text-center"
+          className="w-48 px-8 py-3 bg-white text-black font-heading hover:bg-black hover:text-white transition-all duration-300 rounded-lg text-base md:text-lg tracking-wider cursor-pointer text-center"
         >
           CONTACTO
         </Link>

@@ -3,7 +3,7 @@ import React from "react";
 export const Hero = () => {
   return (
     <div className="relative h-screen">
-      <div className="absolute inset-0 flex justify-start">
+      <div className="absolute inset-0 flex">
         <div
           className="w-[80%] h-full bg-cover bg-center"
           style={{
@@ -15,12 +15,13 @@ export const Hero = () => {
         >
           <div className="absolute inset-0 hero-overlay" />
         </div>
+        <div className="w-[20%] bg-white" />
       </div>
-      <div className="relative container mx-auto px-4 h-full flex items-center">
-        <div className="w-full flex justify-end pr-12">
-          <div className="text-6xl font-bold tracking-wider animate-float flex flex-col items-end space-y-4">
-            <span className="text-white">MODERN\</span>
-            <span className="text-white">INNOVATIVE\</span>
+      <div className="relative container mx-auto h-full flex items-center">
+        <div className="w-full flex justify-end">
+          <div className="text-6xl font-bold tracking-wider animate-float flex flex-col items-start space-y-4">
+            <span className="text-white">MODERN/</span>
+            <span className="text-white">INNOVATIVE/</span>
             <span className="text-black">PREFAB.</span>
           </div>
         </div>

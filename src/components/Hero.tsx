@@ -4,7 +4,7 @@ export const Hero = () => {
   return (
     <div className="relative h-screen">
       <div
-        className="absolute inset-0 bg-cover bg-center transition-all duration-700 hover:scale-105 hover:rotate-2 hover:translate-z-10 hover:shadow-2xl"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
             "url('/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png')",

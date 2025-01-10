@@ -16,28 +16,30 @@ const Index = () => {
       <Hero />
 
       {/* Image Slider Section */}
-      <section className="section-padding container mx-auto px-4 animate-on-scroll">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Nuestros Diseños Modulares
-        </h2>
-        <div className="animate-on-scroll" style={{ animationDelay: '200ms' }}>
-          <ImageSlider />
+      <section className="section-padding container mx-auto px-4">
+        <div className="animate-on-scroll opacity-0">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Nuestros Diseños Modulares
+          </h2>
+          <div className="animate-on-scroll opacity-0" style={{ animationDelay: '200ms' }}>
+            <ImageSlider />
+          </div>
         </div>
       </section>
 
-      <div className="animate-on-scroll">
+      <div className="animate-on-scroll opacity-0">
         <Features />
       </div>
 
-      <div className="animate-on-scroll">
+      <div className="animate-on-scroll opacity-0">
         <DesignerCTA />
       </div>
 
-      <div className="animate-on-scroll">
+      <div className="animate-on-scroll opacity-0">
         <ProductOfferings />
       </div>
 
-      <div className="animate-on-scroll">
+      <div className="animate-on-scroll opacity-0">
         <ProcessSteps />
       </div>
 
@@ -45,7 +47,7 @@ const Index = () => {
       <section className="section-padding">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-on-scroll">
+            <div className="animate-on-scroll opacity-0">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Hecho para Durar Generaciones
               </h2>
@@ -67,7 +69,7 @@ const Index = () => {
                 href="https://drive.google.com/uc?export=download&id=1F3if_cU1AbHDoI6ksZWGMooa1PI3XI_p"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="animate-on-scroll"
+                className="animate-on-scroll opacity-0"
               >
                 <Button variant="secondary" className="text-white gap-2 hover:scale-105 transition-transform duration-300">
                   <Download className="w-4 h-4" />
@@ -75,7 +77,7 @@ const Index = () => {
                 </Button>
               </a>
             </div>
-            <div className="animate-on-scroll" style={{ animationDelay: '300ms' }}>
+            <div className="animate-on-scroll opacity-0" style={{ animationDelay: '300ms' }}>
               <img
                 src="/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png"
                 alt="Diseño Sostenible"

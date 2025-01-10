@@ -2,9 +2,9 @@ export const ProcessSteps = () => {
   return (
     <section className="section-padding bg-gray-light">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 animate-fadeIn">
+        <h2 className="text-2xl md:text-3xl font-bold text-right mb-16 animate-fadeIn font-['Playfair_Display']">
           PASO A PASO
-          <span className="block text-xl md:text-2xl font-normal text-gray-600 mt-2">
+          <span className="block text-lg md:text-xl font-normal text-gray-600 mt-2">
             Nuestro Proceso
           </span>
         </h2>

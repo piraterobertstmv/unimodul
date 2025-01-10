@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="relative h-screen">
       <div
@@ -20,7 +23,10 @@ export const Hero = () => {
           <p className="text-xl md:text-2xl text-white/90 mb-8">
             Unimodul ofrece soluciones modulares versátiles, elegantes y sostenibles
           </p>
-          <Button className="cta-button text-lg hover:scale-110 transition-transform duration-300">
+          <Button 
+            className="cta-button text-lg hover:scale-110 transition-transform duration-300"
+            onClick={() => navigate("/productos")}
+          >
             Explorar Ahora
           </Button>
         </div>

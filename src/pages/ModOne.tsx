@@ -114,11 +114,13 @@ const ModOne = () => {
             {/* Planos Section */}
             <div className="mb-16">
               <h3 className="text-xl font-light mb-4">PLANOS</h3>
-              <img
-                src="/lovable-uploads/4e221c77-b528-4a3b-b5fc-37bb71e2c69f.png"
-                alt="Plano arquitectónico"
-                className="w-full object-contain"
-              />
+              <div className="max-w-3xl mx-auto">
+                <img
+                  src="/lovable-uploads/4e221c77-b528-4a3b-b5fc-37bb71e2c69f.png"
+                  alt="Plano arquitectónico"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
             </div>
 
             {/* CTA Section */}

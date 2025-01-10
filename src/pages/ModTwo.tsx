@@ -132,7 +132,7 @@ const ModTwo = () => {
             </div>
 
             {/* CTA Section */}
-            <div className="bg-secondary text-white p-8 rounded-lg mb-16">
+            <div className="bg-secondary text-white p-8 rounded-lg mb-16 transition-all duration-300 hover:animate-lightning">
               <h2 className="text-2xl font-light mb-4 text-center">COMENCEMOS TU PROYECTO</h2>
               <div className="text-center">
                 <Link

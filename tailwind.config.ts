@@ -74,6 +74,16 @@ export default {
           "50%": { transform: "translateY(-20px)" },
           "100%": { transform: "translateY(0)" },
         },
+        lightning: {
+          "0%, 100%": {
+            opacity: "1",
+            background: "#1E2A4A",
+          },
+          "50%": {
+            opacity: "0.95",
+            background: "linear-gradient(45deg, #1E2A4A 70%, #F97316 75%, #1E2A4A 80%)",
+          }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -83,6 +93,7 @@ export default {
         slideInRight: "slideInRight 0.5s ease-out forwards",
         scaleIn: "scaleIn 0.5s ease-out forwards",
         float: "float 4s ease-in-out infinite",
+        "lightning": "lightning 1.5s ease-in-out infinite",
       },
     },
   },

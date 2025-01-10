@@ -44,8 +44,11 @@ export const ProcessSteps = () => {
           ].map((step, index) => (
             <div 
               key={step.number}
-              className="relative animate-scaleIn"
-              style={{ animationDelay: `${index * 200}ms` }}
+              className={`relative animate-scaleIn opacity-0 translate-y-10`}
+              style={{ 
+                animation: 'fadeIn 0.5s ease-out forwards',
+                animationDelay: `${index * 400}ms`,
+              }}
             >
               <div className="text-8xl font-bold text-primary/10 absolute -top-10 -left-4 z-0">
                 {step.number}
@@ -57,6 +60,11 @@ export const ProcessSteps = () => {
                     <li 
                       key={i}
                       className="flex items-start text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                      style={{
+                        opacity: 0,
+                        animation: 'fadeIn 0.5s ease-out forwards',
+                        animationDelay: `${(index * 400) + ((i + 1) * 200)}ms`
+                      }}
                     >
                       <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0" />
                       {item}

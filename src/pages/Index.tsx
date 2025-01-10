@@ -6,6 +6,7 @@ import { DesignerCTA } from "@/components/sections/DesignerCTA";
 import { ProductOfferings } from "@/components/sections/ProductOfferings";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { Footer } from "@/components/sections/Footer";
+import { ModelsShowcase } from "@/components/sections/ModelsShowcase";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -14,6 +15,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      <ModelsShowcase />
 
       {/* Image Slider Section */}
       <section className="section-padding container mx-auto px-4">

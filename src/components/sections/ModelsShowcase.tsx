@@ -72,9 +72,6 @@ export const ModelsShowcase = () => {
 
       <div className="relative container mx-auto px-4 py-24">
         <div className="flex flex-col items-center justify-center min-h-[400px] text-white space-y-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-center">
-            Nuestros Modelos
-          </h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             {models.map((model) => (
               <div

@@ -20,7 +20,7 @@ const models = [
 ];
 
 export const ModelsShowcase = () => {
-  const [activeModel, setActiveModel] = useState<number | null>(null);
+  const [activeModel, setActiveModel] = useState<number | null>(1); // Set default to 1 (MOD.STUDIO)
 
   return (
     <section className="relative min-h-[600px] overflow-hidden">
@@ -55,7 +55,7 @@ export const ModelsShowcase = () => {
                 activeModel === model.id ? "text-white scale-110" : "text-gray-400 hover:text-white"
               )}
               onMouseEnter={() => setActiveModel(model.id)}
-              onMouseLeave={() => setActiveModel(null)}
+              onMouseLeave={() => setActiveModel(1)} // Return to MOD.STUDIO when mouse leaves
             >
               <h3 className="text-2xl font-bold">{model.name}</h3>
             </div>

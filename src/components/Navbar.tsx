@@ -32,6 +32,9 @@ export const Navbar = () => {
               <Link to="/historias" className="nav-link">
                 Historias
               </Link>
+              <Link to="/blog" className="nav-link">
+                Blog
+              </Link>
               <Link to="/contacto" className="nav-link">
                 Contacto
               </Link>
@@ -76,6 +79,13 @@ export const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 Historias
+              </Link>
+              <Link
+                to="/blog"
+                className="block px-3 py-2 nav-link"
+                onClick={() => setIsOpen(false)}
+              >
+                Blog
               </Link>
               <Link
                 to="/contacto"

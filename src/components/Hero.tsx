@@ -3,7 +3,7 @@ import React from "react";
 export const Hero = () => {
   return (
     <div className="relative h-screen">
-      <div className="absolute inset-0 flex justify-end">
+      <div className="absolute inset-0 flex justify-start">
         <div
           className="w-[75%] h-full bg-cover bg-center"
           style={{

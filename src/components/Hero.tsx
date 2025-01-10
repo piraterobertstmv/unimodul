@@ -7,24 +7,23 @@ export const Hero = () => {
   return (
     <div className="relative h-screen">
       <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-700"
         style={{
           backgroundImage:
-            "url('/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png')",
+            "url('/lovable-uploads/52167c24-7505-4d88-8d96-c4ab55be28ac.png')",
         }}
       >
-        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
-      <div className="relative container mx-auto px-4 h-full flex items-center">
-        <div className="max-w-2xl animate-slideInLeft">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Consigue un nuevo espacio para vivir
+      <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
+        <div className="max-w-2xl">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-float tracking-wider">
+            MODERN/<br />
+            INNOVATIVE/<br />
+            PREFAB.
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8">
-            Unimodul ofrece soluciones modulares versátiles, elegantes y sostenibles
-          </p>
           <Button 
-            className="cta-button text-lg hover:scale-110 transition-transform duration-300"
+            className="mt-8 bg-[#ea384c] hover:bg-[#ea384c]/90 text-white px-8 py-4 text-lg rounded-none"
             onClick={() => navigate("/productos")}
           >
             Explorar Ahora

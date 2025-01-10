@@ -20,15 +20,25 @@ const models = [
 ];
 
 export const ModelsShowcase = () => {
-  const [activeModel, setActiveModel] = useState<number | null>(1); // Set default to 1 (MOD.STUDIO)
+  const [activeModel, setActiveModel] = useState<number | null>(1);
 
   return (
     <section className="relative min-h-[600px] overflow-hidden">
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-12">OUR MODELS</h2>
+      {/* Full Background Image */}
+      <div className="absolute inset-0 w-full h-full">
+        <img
+          src={models.find(model => model.id === (activeModel || 1))?.image}
+          alt="Background"
+          className="w-full h-full object-cover transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      <div className="container mx-auto px-4 py-16 relative z-10">
+        <h2 className="text-3xl font-bold mb-12 text-white">OUR MODELS</h2>
         
         {/* Grid Container */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-1 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
           {models.map((model) => (
             <div
               key={model.id}
@@ -39,12 +49,15 @@ export const ModelsShowcase = () => {
               onMouseEnter={() => setActiveModel(model.id)}
               onMouseLeave={() => setActiveModel(1)}
             >
-              {/* Image Container */}
-              <div className="absolute inset-0 w-full h-full">
+              {/* Individual Section Image */}
+              <div className="absolute inset-0 w-full h-full overflow-hidden">
                 <img
                   src={model.image}
                   alt={model.name}
-                  className="w-full h-full object-cover"
+                  className={cn(
+                    "w-full h-full object-cover transition-all duration-500",
+                    activeModel === model.id ? "scale-110" : "scale-100"
+                  )}
                 />
                 <div className={cn(
                   "absolute inset-0 bg-black/30 transition-opacity duration-300",

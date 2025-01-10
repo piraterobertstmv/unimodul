@@ -74,7 +74,7 @@ export const ProcessSteps = () => {
 
         <div className="text-center mt-16">
           <a 
-            href="/contact" 
+            href="/proceso" 
             className="inline-flex items-center gap-2 cta-button animate-fadeIn"
           >
             Explorar el Proceso Completo

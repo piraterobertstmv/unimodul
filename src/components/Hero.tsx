@@ -5,7 +5,7 @@ export const Hero = () => {
     <div className="relative h-screen">
       <div className="absolute inset-0 flex justify-start">
         <div
-          className="w-[75%] h-full bg-cover bg-center"
+          className="w-[80%] h-full bg-cover bg-center"
           style={{
             backgroundImage:
               "url('/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png')",
@@ -19,8 +19,8 @@ export const Hero = () => {
       <div className="relative container mx-auto px-4 h-full flex items-center">
         <div className="w-full flex justify-end pr-12">
           <div className="text-6xl font-bold tracking-wider animate-float flex flex-col items-end space-y-4">
-            <span className="text-black">MODERN\</span>
-            <span className="text-black">INNOVATIVE\</span>
+            <span className="text-white">MODERN\</span>
+            <span className="text-white">INNOVATIVE\</span>
             <span className="text-black">PREFAB.</span>
           </div>
         </div>

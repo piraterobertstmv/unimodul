@@ -2,14 +2,14 @@ export const ProcessSteps = () => {
   return (
     <section className="section-padding bg-gray-light">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 animate-fadeIn">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
           PASO A PASO
           <span className="block text-xl md:text-2xl font-normal text-gray-600 mt-2">
             Nuestro Proceso
           </span>
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+        <div className="relative">
           {[
             {
               number: "01",
@@ -44,10 +44,10 @@ export const ProcessSteps = () => {
           ].map((step, index) => (
             <div 
               key={step.number}
-              className={`relative animate-scaleIn opacity-0 translate-y-10`}
+              className="relative bg-white rounded-lg p-8 shadow-lg mb-8 md:w-[90%]"
               style={{ 
-                animation: 'fadeIn 0.5s ease-out forwards',
-                animationDelay: `${index * 400}ms`,
+                marginLeft: `${index * 5}%`,
+                zIndex: 3 - index
               }}
             >
               <div className="text-8xl font-bold text-primary/10 absolute -top-10 -left-4 z-0">
@@ -60,11 +60,6 @@ export const ProcessSteps = () => {
                     <li 
                       key={i}
                       className="flex items-start text-gray-600 hover:text-gray-900 transition-colors duration-300"
-                      style={{
-                        opacity: 0,
-                        animation: 'fadeIn 0.5s ease-out forwards',
-                        animationDelay: `${(index * 400) + ((i + 1) * 200)}ms`
-                      }}
                     >
                       <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0" />
                       {item}

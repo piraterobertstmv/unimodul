@@ -27,37 +27,38 @@ export const ModelsShowcase = () => {
       <div className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold mb-12">OUR MODELS</h2>
         
-        {/* Background Images */}
-        {models.map((model) => (
-          <div
-            key={model.id}
-            className={cn(
-              "absolute inset-0 transition-opacity duration-500",
-              activeModel === model.id ? "opacity-100" : "opacity-0"
-            )}
-          >
-            <img
-              src={model.image}
-              alt={model.name}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30" />
-          </div>
-        ))}
-
-        {/* Model Names Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+        {/* Grid Container */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-1 relative">
           {models.map((model) => (
             <div
               key={model.id}
               className={cn(
-                "p-8 text-center cursor-pointer transition-all duration-300",
-                activeModel === model.id ? "text-white scale-110" : "text-gray-400 hover:text-white"
+                "relative h-[600px] group cursor-pointer overflow-hidden border-x border-gray-800",
+                "transition-all duration-500"
               )}
               onMouseEnter={() => setActiveModel(model.id)}
-              onMouseLeave={() => setActiveModel(1)} // Return to MOD.STUDIO when mouse leaves
+              onMouseLeave={() => setActiveModel(1)}
             >
-              <h3 className="text-2xl font-bold">{model.name}</h3>
+              {/* Image Container */}
+              <div className="absolute inset-0 w-full h-full">
+                <img
+                  src={model.image}
+                  alt={model.name}
+                  className="w-full h-full object-cover"
+                />
+                <div className={cn(
+                  "absolute inset-0 bg-black/30 transition-opacity duration-300",
+                  activeModel === model.id ? "opacity-0" : "opacity-100"
+                )} />
+              </div>
+
+              {/* Model Name */}
+              <div className={cn(
+                "absolute inset-x-0 bottom-0 p-8 text-center transition-all duration-300",
+                activeModel === model.id ? "text-white translate-y-0" : "text-gray-400 translate-y-4"
+              )}>
+                <h3 className="text-2xl font-bold">{model.name}</h3>
+              </div>
             </div>
           ))}
         </div>

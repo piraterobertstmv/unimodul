@@ -48,14 +48,6 @@ const ModStudio = () => {
                 <p className="text-gray-600">20'x10' (6.1m)</p>
               </div>
               <div>
-                <h3 className="text-xl font-light mb-4">PLANOS</h3>
-                <img
-                  src="/lovable-uploads/0370276d-23f1-4ed1-aec4-12823772854d.png"
-                  alt="Plano arquitectónico"
-                  className="w-full max-w-[300px] object-contain"
-                />
-              </div>
-              <div>
                 <h3 className="text-xl font-light mb-4">CIMENTACIÓN</h3>
                 <p className="text-gray-600">Opciones disponibles de losa de concreto o cimentación elevada</p>
               </div>
@@ -88,6 +80,16 @@ const ModStudio = () => {
                   <li>• Terraza de Madera</li>
                 </ul>
               </div>
+            </div>
+
+            {/* Planos Section */}
+            <div className="mb-16">
+              <h3 className="text-xl font-light mb-4">PLANOS</h3>
+              <img
+                src="/lovable-uploads/0370276d-23f1-4ed1-aec4-12823772854d.png"
+                alt="Plano arquitectónico"
+                className="w-full object-contain"
+              />
             </div>
 
             {/* CTA Section */}

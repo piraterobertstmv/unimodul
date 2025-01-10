@@ -1,8 +1,25 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Link } from "react-router-dom";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const ModStudio = () => {
+  const images = [
+    "/lovable-uploads/523c87b3-077e-4573-81c7-1671f244b05f.png",
+    "/lovable-uploads/18889e5c-bb5f-4c2c-ac5b-339249e5ac30.png",
+    "/lovable-uploads/a728b20e-07be-4a9b-8b51-2ddb48142593.png",
+    "/lovable-uploads/a83a0864-8f66-4615-9663-48d823a4f1e2.png",
+    "/lovable-uploads/f94c341d-98e0-4f19-bfd6-7bc970207b21.png",
+    "/lovable-uploads/0c99ccc6-6cc4-42ea-b623-e8acdef42f78.png",
+    "/lovable-uploads/6439b036-09a6-43e4-bc6b-c0d02f1dbc8c.png"
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -15,13 +32,25 @@ const ModStudio = () => {
               <p className="text-3xl font-light text-gray-800">$85,000 USD</p>
             </div>
 
-            {/* Main Image */}
+            {/* Main Image Carousel */}
             <div className="mb-16">
-              <img
-                src="/lovable-uploads/523c87b3-077e-4573-81c7-1671f244b05f.png"
-                alt="Vista exterior MOD.STUDIO"
-                className="w-full h-[600px] object-cover rounded-lg"
-              />
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {images.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="relative w-full h-[600px]">
+                        <img
+                          src={image}
+                          alt={`Vista MOD.STUDIO ${index + 1}`}
+                          className="w-full h-full object-cover rounded-lg"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
+              </Carousel>
             </div>
 
             {/* Description Section */}
@@ -34,7 +63,7 @@ const ModStudio = () => {
               </div>
               <div>
                 <img
-                  src="/lovable-uploads/523c87b3-077e-4573-81c7-1671f244b05f.png"
+                  src={images[1]}
                   alt="Vista adicional MOD.STUDIO"
                   className="w-full h-[300px] object-cover rounded-lg"
                 />
@@ -42,7 +71,7 @@ const ModStudio = () => {
             </div>
 
             {/* Specifications Grid */}
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
               <div>
                 <h3 className="text-xl font-light mb-4">DIMENSIONES EXTERIORES</h3>
                 <p className="text-gray-600">20'x10' (6.1m)</p>

@@ -67,8 +67,9 @@ export default {
           "100%": { transform: "scale(1)", opacity: "1" },
         },
         float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
+          "0%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+          "100%": { transform: "translateY(0)" },
         },
       },
       animation: {
@@ -78,7 +79,7 @@ export default {
         slideInLeft: "slideInLeft 0.5s ease-out forwards",
         slideInRight: "slideInRight 0.5s ease-out forwards",
         scaleIn: "scaleIn 0.5s ease-out forwards",
-        float: "float 3s ease-in-out infinite",
+        float: "float 4s ease-in-out infinite",
       },
     },
   },

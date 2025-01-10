@@ -7,6 +7,7 @@ import {
   Linkedin,
   ChevronDown,
   ArrowRight,
+  Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -171,9 +172,16 @@ const Index = () => {
                   Diseño resistente al clima
                 </li>
               </ul>
-              <Button variant="secondary" className="text-white">
-                Saber Más
-              </Button>
+              <a 
+                href="https://drive.google.com/uc?export=download&id=1F3if_cU1AbHDoI6ksZWGMooa1PI3XI_p"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="secondary" className="text-white gap-2">
+                  <Download className="w-4 h-4" />
+                  Descargar Catálogo
+                </Button>
+              </a>
             </div>
             <div>
               <img

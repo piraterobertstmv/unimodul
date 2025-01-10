@@ -26,6 +26,29 @@ const Products = () => {
     }
   ];
 
+  const categories = [
+    {
+      title: "Particulares",
+      description: "Soluciones habitacionales para individuos y familias",
+      icon: "🏠"
+    },
+    {
+      title: "Campings",
+      description: "Módulos adaptados para instalaciones turísticas",
+      icon: "⛺"
+    },
+    {
+      title: "Empresas",
+      description: "Espacios comerciales y oficinas modulares",
+      icon: "🏢"
+    },
+    {
+      title: "Inversores",
+      description: "Oportunidades de inversión en proyectos modulares",
+      icon: "💰"
+    }
+  ];
+
   const handleModelClick = (route: string) => {
     navigate(route);
   };
@@ -35,6 +58,25 @@ const Products = () => {
       <Navbar />
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4">
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fadeIn">
+              Soluciones para cada necesidad
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {categories.map((category, index) => (
+                <div
+                  key={category.title}
+                  className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="text-4xl mb-4">{category.icon}</div>
+                  <h3 className="text-xl font-bold mb-2">{category.title}</h3>
+                  <p className="text-gray-600">{category.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 animate-fadeIn">
             Nuestros Modelos
           </h1>

@@ -1,17 +1,14 @@
 import React from "react";
+import Spline from '@splinetool/react-spline';
 
 export const Hero = () => {
   return (
     <div className="relative h-screen">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png')",
-          transformStyle: "preserve-3d",
-          perspective: "1000px",
-        }}
-      >
+      <div className="absolute inset-0">
+        <Spline 
+          className="w-full h-full"
+          scene="https://my.spline.design/liquidring-5c29547bf346749519e092c0deb4118d/" 
+        />
         <div className="absolute inset-0 hero-overlay" />
       </div>
       <div className="relative container mx-auto px-4 h-full flex items-center justify-end">

@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import Spline from '@splinetool/react-spline';
 
 export const Hero = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  const handleSplineLoad = () => {
+    setIsLoading(false);
+  };
+
+  const handleSplineError = () => {
+    setError(true);
+    setIsLoading(false);
+    console.error("Error loading Spline scene");
+  };
+
   return (
     <div className="relative h-screen">
       <div className="absolute inset-0">
-        <Spline 
-          className="w-full h-full"
-          scene="https://my.spline.design/liquidring-5c29547bf346749519e092c0deb4118d/" 
-        />
+        {!error ? (
+          <Spline 
+            className="w-full h-full"
+            scene="https://prod.spline.design/6PDxoyL-1szoHU9l/scene.splinecode"
+            onLoad={handleSplineLoad}
+            onError={handleSplineError}
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-r from-gray-800 to-gray-900" />
+        )}
         <div className="absolute inset-0 hero-overlay" />
       </div>
       <div className="relative container mx-auto px-4 h-full flex items-center justify-end">
@@ -20,6 +39,11 @@ export const Hero = () => {
           </div>
         </div>
       </div>
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+          <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+        </div>
+      )}
     </div>
   );
 };

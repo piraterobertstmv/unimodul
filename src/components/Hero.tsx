@@ -20,8 +20,8 @@ export const Hero = () => {
       <div className="relative container mx-auto h-full flex items-center">
         <div className="w-full flex justify-end">
           <div className="text-6xl font-bold tracking-wider animate-float flex flex-col items-start space-y-4">
-            <span className="text-black">MODERN/</span>
-            <span className="text-black">INNOVATIVE/</span>
+            <span className="text-white">MODERN/</span>
+            <span className="text-white">INNOVATIVE/</span>
             <span className="text-white">PREFAB.</span>
           </div>
         </div>

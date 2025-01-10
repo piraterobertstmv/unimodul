@@ -15,6 +15,16 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      
+      {/* Title Section */}
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center animate-fadeIn">
+            Nuestros Modelos
+          </h2>
+        </div>
+      </div>
+
       <ModelsShowcase />
 
       {/* Image Slider Section */}

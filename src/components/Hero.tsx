@@ -20,7 +20,7 @@ export const Hero = () => {
       </div>
 
       <div className="relative container mx-auto h-full flex items-center px-4">
-        <div className="w-full flex justify-end mt-64 md:mt-32">
+        <div className="w-full flex justify-end mt-32 md:mt-32">
           <div className="text-3xl md:text-6xl font-bold tracking-wider animate-float flex flex-col items-start space-y-2 md:space-y-4">
             <span className="text-white drop-shadow-lg">MODERN/</span>
             <span className="text-white drop-shadow-lg">INNOVATIVE/</span>

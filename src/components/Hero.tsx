@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Spline from '@splinetool/react-spline';
+import Spline from '@splinetool/react-spline/next';
 
 export const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +21,7 @@ export const Hero = () => {
         {!error ? (
           <Spline 
             className="w-full h-full"
-            scene="https://my.spline.design/liquidring-5c29547bf346749519e092c0deb4118d/"
+            scene="loading..."
             onLoad={handleSplineLoad}
             onError={handleSplineError}
           />

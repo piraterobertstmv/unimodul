@@ -10,7 +10,7 @@ const models = [
   {
     id: 2,
     name: 'MOD.ONE',
-    image: '/lovable-uploads/4eeca0a2-9ade-44a0-bd17-d6713900e92c.png',
+    image: '/lovable-uploads/9c9e36b7-8ce0-4ada-a28a-e483720a4b6f.png',
   },
   {
     id: 3,

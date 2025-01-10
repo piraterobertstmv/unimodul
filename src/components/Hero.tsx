@@ -20,7 +20,7 @@ export const Hero = () => {
         </div>
         <div className="w-[20%] bg-black flex flex-col justify-end items-center pb-12 gap-6">
           <button
-            onClick={() => navigate("/modelos")}
+            onClick={() => navigate("/productos/modelos")}
             className="px-8 py-3 bg-white text-black font-heading hover:bg-black hover:text-white transition-all duration-300 rounded-lg text-lg tracking-wider"
           >
             MODELOS

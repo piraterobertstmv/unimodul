@@ -50,7 +50,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/nosotros" element={<About />} />
-            <Route path="/productos" element={<Products />} />
+            <Route path="/productos" element={<Products />}>
+              <Route path="modelos" element={<Models />} />
+            </Route>
             <Route path="/historias" element={<Stories />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
@@ -58,7 +60,6 @@ const App = () => {
             <Route path="/terminos" element={<Terms />} />
             <Route path="/privacidad" element={<Privacy />} />
             <Route path="/proceso" element={<Process />} />
-            <Route path="/modelos" element={<Models />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

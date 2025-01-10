@@ -14,6 +14,7 @@ import BlogPost from "./pages/BlogPost";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Process from "./pages/Process";
+import Models from "./pages/Models";
 
 const queryClient = new QueryClient();
 
@@ -33,12 +34,10 @@ const App = () => {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    // Observe all elements with animate-on-scroll class
     document.querySelectorAll('.animate-on-scroll').forEach(element => {
       observer.observe(element);
     });
 
-    // Cleanup observer on component unmount
     return () => observer.disconnect();
   }, []);
 
@@ -59,6 +58,7 @@ const App = () => {
             <Route path="/terminos" element={<Terms />} />
             <Route path="/privacidad" element={<Privacy />} />
             <Route path="/proceso" element={<Process />} />
+            <Route path="/modelos" element={<Models />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

@@ -16,11 +16,11 @@ export const Hero = () => {
       </div>
       <div className="relative container mx-auto px-4 h-full flex items-center justify-end">
         <div className="text-right">
-          <h2 className="text-white text-6xl font-bold tracking-wider animate-float whitespace-pre-line">
-            MODERN\
-            INNOVATIVE\
-            PREFAB.
-          </h2>
+          <div className="text-white text-6xl font-bold tracking-wider animate-float flex flex-col items-end space-y-4">
+            <span>MODERN\</span>
+            <span>INNOVATIVE\</span>
+            <span>PREFAB.</span>
+          </div>
         </div>
       </div>
     </div>

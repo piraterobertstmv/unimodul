@@ -15,6 +15,9 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Process from "./pages/Process";
 import Models from "./pages/Models";
+import ModStudio from "./pages/ModStudio";
+import ModOne from "./pages/ModOne";
+import ModTwo from "./pages/ModTwo";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +54,9 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/nosotros" element={<About />} />
             <Route path="/productos" element={<Products />} />
+            <Route path="/productos/mod-studio" element={<ModStudio />} />
+            <Route path="/productos/mod-one" element={<ModOne />} />
+            <Route path="/productos/mod-two" element={<ModTwo />} />
             <Route path="/historias" element={<Stories />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />

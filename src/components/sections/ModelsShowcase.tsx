@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 const models = [
@@ -20,10 +20,31 @@ const models = [
 ];
 
 export const ModelsShowcase = () => {
-  const [activeModel, setActiveModel] = useState<number>(1); // Set default to MOD.STUDIO (id: 1)
+  const [activeModel, setActiveModel] = useState<number>(1);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '-50px',
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="relative min-h-[600px] overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-[600px] overflow-hidden section-transition">
       <div className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold mb-12">OUR MODELS</h2>
         
@@ -55,7 +76,7 @@ export const ModelsShowcase = () => {
                 activeModel === model.id ? "text-white scale-110" : "text-gray-400 hover:text-white"
               )}
               onMouseEnter={() => setActiveModel(model.id)}
-              onMouseLeave={() => setActiveModel(1)} // Return to MOD.STUDIO when mouse leaves
+              onMouseLeave={() => setActiveModel(1)}
             >
               <h3 className="text-2xl font-bold">{model.name}</h3>
             </div>

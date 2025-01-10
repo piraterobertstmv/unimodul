@@ -66,17 +66,14 @@
   transition-delay: 0.6s;
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
+/* Sección de transición */
+.section-transition {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
 }
 
-.animate-bounce {
-  animation: bounce 1s infinite;
+.section-transition.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

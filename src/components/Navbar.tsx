@@ -7,9 +7,9 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+    <nav className="fixed w-full bg-white/95 backdrop-blur-sm z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <img 
@@ -22,25 +22,25 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <div className="flex space-x-6">
-              <Link to="/nosotros" className="nav-link">
-                Nosotros
+            <div className="flex space-x-8">
+              <Link to="/productos" className="text-gray-800 hover:text-primary uppercase text-sm tracking-wider">
+                Models
               </Link>
-              <Link to="/productos" className="nav-link">
-                Productos
+              <Link to="/proceso" className="text-gray-800 hover:text-primary uppercase text-sm tracking-wider">
+                Process
               </Link>
-              <Link to="/historias" className="nav-link">
-                Historias
+              <Link to="/nosotros" className="text-gray-800 hover:text-primary uppercase text-sm tracking-wider">
+                About
               </Link>
-              <Link to="/blog" className="nav-link">
-                Blog
+              <Link to="/faq" className="text-gray-800 hover:text-primary uppercase text-sm tracking-wider">
+                FAQ
               </Link>
-              <Link to="/contacto" className="nav-link">
-                Contacto
+              <Link to="/historias" className="text-gray-800 hover:text-primary uppercase text-sm tracking-wider">
+                Case Studies
               </Link>
             </div>
-            <Button className="bg-primary hover:bg-primary/90 text-white">
-              Diseñar Ahora
+            <Button variant="secondary" className="bg-black text-white hover:bg-black/90 uppercase text-sm tracking-wider">
+              Get in Touch
             </Button>
           </div>
 
@@ -60,43 +60,43 @@ export const Navbar = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
-                to="/nosotros"
-                className="block px-3 py-2 nav-link"
+                to="/productos"
+                className="block px-3 py-2 text-gray-800 hover:text-primary uppercase text-sm tracking-wider"
                 onClick={() => setIsOpen(false)}
               >
-                Nosotros
+                Models
               </Link>
               <Link
-                to="/productos"
-                className="block px-3 py-2 nav-link"
+                to="/proceso"
+                className="block px-3 py-2 text-gray-800 hover:text-primary uppercase text-sm tracking-wider"
                 onClick={() => setIsOpen(false)}
               >
-                Productos
+                Process
+              </Link>
+              <Link
+                to="/nosotros"
+                className="block px-3 py-2 text-gray-800 hover:text-primary uppercase text-sm tracking-wider"
+                onClick={() => setIsOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                to="/faq"
+                className="block px-3 py-2 text-gray-800 hover:text-primary uppercase text-sm tracking-wider"
+                onClick={() => setIsOpen(false)}
+              >
+                FAQ
               </Link>
               <Link
                 to="/historias"
-                className="block px-3 py-2 nav-link"
+                className="block px-3 py-2 text-gray-800 hover:text-primary uppercase text-sm tracking-wider"
                 onClick={() => setIsOpen(false)}
               >
-                Historias
-              </Link>
-              <Link
-                to="/blog"
-                className="block px-3 py-2 nav-link"
-                onClick={() => setIsOpen(false)}
-              >
-                Blog
-              </Link>
-              <Link
-                to="/contacto"
-                className="block px-3 py-2 nav-link"
-                onClick={() => setIsOpen(false)}
-              >
-                Contacto
+                Case Studies
               </Link>
               <div className="px-3 py-2">
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white">
-                  Diseñar Ahora
+                <Button variant="secondary" className="w-full bg-black text-white hover:bg-black/90 uppercase text-sm tracking-wider">
+                  Get in Touch
                 </Button>
               </div>
             </div>

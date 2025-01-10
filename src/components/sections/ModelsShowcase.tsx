@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
+import { useNavigate } from 'react-router-dom';
 
 const models = [
   {
@@ -22,6 +23,7 @@ const models = [
 export const ModelsShowcase = () => {
   const [activeModel, setActiveModel] = useState<number>(1);
   const sectionRef = useRef<HTMLElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,6 +44,10 @@ export const ModelsShowcase = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  const handleModelClick = (modelId: number) => {
+    navigate('/productos');
+  };
 
   return (
     <section ref={sectionRef} className="relative min-h-[600px] overflow-hidden section-transition">
@@ -77,6 +83,7 @@ export const ModelsShowcase = () => {
               )}
               onMouseEnter={() => setActiveModel(model.id)}
               onMouseLeave={() => setActiveModel(1)}
+              onClick={() => handleModelClick(model.id)}
             >
               <h3 className="text-2xl font-bold">{model.name}</h3>
             </div>

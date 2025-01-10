@@ -43,23 +43,23 @@ const Products = () => {
             {models.map((model, index) => (
               <div
                 key={model.name}
-                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-scaleIn cursor-pointer"
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:scale-[1.02]"
                 style={{ animationDelay: `${index * 100}ms` }}
                 onClick={() => handleModelClick(model.route)}
               >
                 <img
                   src={model.image}
                   alt={model.name}
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
                   <h3 className="text-2xl font-bold text-white mb-2">{model.name}</h3>
                 </div>
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-white text-center p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-2xl font-bold mb-4">{model.name}</h3>
-                    <p className="mb-6">{model.description}</p>
-                    <button className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300">
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center backdrop-blur-sm">
+                  <div className="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500">
+                    <h3 className="text-2xl font-bold mb-4 animate-fadeIn">{model.name}</h3>
+                    <p className="mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{model.description}</p>
+                    <button className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                       Más Información
                     </button>
                   </div>

@@ -15,7 +15,7 @@ const models = [
   {
     id: 3,
     name: 'MOD.TWO',
-    image: '/lovable-uploads/d95ca2e9-9e49-4242-a8e0-e6f9172ee91b.png',
+    image: '/lovable-uploads/7f30f145-9c17-4375-84f4-bc50e7ae1e12.png',
   },
 ];
 

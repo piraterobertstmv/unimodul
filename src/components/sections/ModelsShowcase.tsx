@@ -44,9 +44,9 @@ export const ModelsShowcase = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-[600px] overflow-hidden section-transition">
+    <section ref={sectionRef} className="relative min-h-[600px] overflow-hidden section-transition mt-[20vh]">
       <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-12">OUR MODELS</h2>
+        <h2 className="text-3xl font-bold mb-12">MODELOS</h2>
         
         {/* Background Images */}
         {models.map((model) => (

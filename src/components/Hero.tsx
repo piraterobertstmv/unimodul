@@ -15,14 +15,14 @@ export const Hero = () => {
         >
           <div className="absolute inset-0 hero-overlay" />
         </div>
-        <div className="w-[20%] bg-white" />
+        <div className="w-[20%] bg-black" />
       </div>
       <div className="relative container mx-auto h-full flex items-center">
         <div className="w-full flex justify-end">
           <div className="text-6xl font-bold tracking-wider animate-float flex flex-col items-start space-y-4">
             <span className="text-white">MODERN/</span>
             <span className="text-white">INNOVATIVE/</span>
-            <span className="text-black">PREFAB.</span>
+            <span className="text-white">PREFAB.</span>
           </div>
         </div>
       </div>

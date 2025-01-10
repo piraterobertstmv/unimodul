@@ -45,6 +45,18 @@ export const ModelsShowcase = () => {
 
   return (
     <section ref={sectionRef} className="relative min-h-[600px] overflow-hidden section-transition mt-[20vh]">
+      {/* Sliding Titles */}
+      <div className="container mx-auto px-4 mb-16">
+        <div className="overflow-hidden">
+          <h3 className="text-xl font-medium mb-2 animate-slideInLeft">
+            Desde Vinaroz
+          </h3>
+          <h2 className="text-4xl md:text-5xl font-bold animate-slideInRight">
+            Nuestros Modelos
+          </h2>
+        </div>
+      </div>
+
       <div className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold mb-12">MODELOS</h2>
         

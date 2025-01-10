@@ -3,23 +3,25 @@ import React from "react";
 export const Hero = () => {
   return (
     <div className="relative h-screen">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png')",
-          transformStyle: "preserve-3d",
-          perspective: "1000px",
-        }}
-      >
-        <div className="absolute inset-0 hero-overlay" />
+      <div className="absolute inset-0 flex justify-end">
+        <div
+          className="w-[75%] h-full bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png')",
+            transformStyle: "preserve-3d",
+            perspective: "1000px",
+          }}
+        >
+          <div className="absolute inset-0 hero-overlay" />
+        </div>
       </div>
-      <div className="relative container mx-auto px-4 h-full flex items-center justify-end">
-        <div className="text-right">
-          <div className="text-white text-6xl font-bold tracking-wider animate-float flex flex-col items-end space-y-4">
-            <span>MODERN\</span>
-            <span>INNOVATIVE\</span>
-            <span>PREFAB.</span>
+      <div className="relative container mx-auto px-4 h-full flex items-center">
+        <div className="w-full flex justify-end pr-12">
+          <div className="text-6xl font-bold tracking-wider animate-float flex flex-col items-end space-y-4">
+            <span className="text-black">MODERN\</span>
+            <span className="text-black">INNOVATIVE\</span>
+            <span className="text-black">PREFAB.</span>
           </div>
         </div>
       </div>

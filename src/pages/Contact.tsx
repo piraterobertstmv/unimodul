@@ -1,8 +1,62 @@
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
+import emailjs from '@emailjs/browser';
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const formSchema = z.object({
+  name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres" }),
+  email: z.string().email({ message: "Email inválido" }),
+  message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres" }),
+});
 
 const Contact = () => {
+  const { toast } = useToast();
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    try {
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        message: data.message,
+        to_email: "614169737@unimodul.es",
+      };
+
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // You'll need to replace this with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // You'll need to replace this with your EmailJS template ID
+        templateParams,
+        'YOUR_PUBLIC_KEY' // You'll need to replace this with your EmailJS public key
+      );
+
+      toast({
+        title: "Mensaje enviado",
+        description: "Nos pondremos en contacto contigo pronto.",
+      });
+      form.reset();
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -18,39 +72,54 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 gap-12 mt-12">
             {/* Contact Form */}
             <div className="bg-white p-8 rounded-lg shadow-lg animate-slideInLeft">
-              <form className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Nombre
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                    placeholder="Tu nombre"
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Nombre</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Tu nombre" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                    placeholder="tu@email.com"
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input placeholder="tu@email.com" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Mensaje
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                    placeholder="¿En qué podemos ayudarte?"
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Mensaje</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="¿En qué podemos ayudarte?"
+                            className="min-h-[120px]"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                <Button className="w-full cta-button">Enviar Mensaje</Button>
-              </form>
+                  <Button type="submit" className="w-full">Enviar Mensaje</Button>
+                </form>
+              </Form>
             </div>
 
             {/* Contact Information */}
@@ -59,14 +128,14 @@ const Contact = () => {
                 <Mail className="w-6 h-6 text-primary mt-1" />
                 <div>
                   <h3 className="text-lg font-bold mb-1">Email</h3>
-                  <p className="text-gray-600">contacto@unimodul.com</p>
+                  <p className="text-gray-600">614169737@unimodul.es</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <Phone className="w-6 h-6 text-primary mt-1" />
                 <div>
                   <h3 className="text-lg font-bold mb-1">Teléfono</h3>
-                  <p className="text-gray-600">+34 900 123 456</p>
+                  <p className="text-gray-600">+34 614 16 97 37</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -74,8 +143,9 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-bold mb-1">Ubicación</h3>
                   <p className="text-gray-600">
-                    Calle Principal 123<br />
-                    28001 Madrid, España
+                    C. del Proyecto, 19<br />
+                    12500 Vinaroz, Castellón<br />
+                    España
                   </p>
                 </div>
               </div>

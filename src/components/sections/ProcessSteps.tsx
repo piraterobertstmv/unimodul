@@ -44,9 +44,8 @@ export const ProcessSteps = () => {
           ].map((step, index) => (
             <div 
               key={step.number}
-              className="relative bg-white rounded-lg p-8 shadow-lg animate-on-scroll"
+              className="relative bg-white rounded-lg p-8 shadow-lg animate-on-scroll h-full"
               style={{ 
-                marginTop: `${index * 40}px`,
                 zIndex: 3 - index,
                 animationDelay: `${index * 0.2}s`
               }}

@@ -11,8 +11,12 @@ export const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-heading font-bold">
-              unimodul
+            <Link to="/" className="flex items-center space-x-2">
+              <img 
+                src="/lovable-uploads/68070432-2518-4801-b3f4-37b58d2127f1.png" 
+                alt="Unimodul Logo" 
+                className="h-8 w-auto"
+              />
             </Link>
           </div>
 
@@ -32,7 +36,9 @@ export const Navbar = () => {
                 Contacto
               </Link>
             </div>
-            <Button className="cta-button">Diseñar Ahora</Button>
+            <Button className="bg-primary hover:bg-primary/90 text-white">
+              Diseñar Ahora
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -79,7 +85,9 @@ export const Navbar = () => {
                 Contacto
               </Link>
               <div className="px-3 py-2">
-                <Button className="cta-button w-full">Diseñar Ahora</Button>
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white">
+                  Diseñar Ahora
+                </Button>
               </div>
             </div>
           </div>

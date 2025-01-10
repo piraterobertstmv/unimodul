@@ -25,13 +25,17 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#ea384c",
+          DEFAULT: "#F97316",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#000000",
+          DEFAULT: "#1E2A4A",
           foreground: "#FFFFFF",
         },
+        gray: {
+          light: "#F3F3F3",
+          medium: "#888888",
+        }
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],

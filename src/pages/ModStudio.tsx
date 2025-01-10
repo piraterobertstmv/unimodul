@@ -50,7 +50,7 @@ const ModStudio = () => {
               <div>
                 <h3 className="text-xl font-light mb-4">PLANOS</h3>
                 <img
-                  src="/lovable-uploads/298a4051-327c-4efd-9e25-e6ab9933b6e9.png"
+                  src="/lovable-uploads/0370276d-23f1-4ed1-aec4-12823772854d.png"
                   alt="Plano arquitectónico"
                   className="w-full max-w-[300px] object-contain"
                 />

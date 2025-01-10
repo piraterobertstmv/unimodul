@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
 
 export const Hero = () => {
   const navigate = useNavigate();
@@ -41,12 +40,6 @@ export const Hero = () => {
             <span className="text-white">PREFAB.</span>
           </div>
         </div>
-      </div>
-      
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white animate-bounce cursor-pointer">
-        <span className="text-sm mb-2">Scroll Down</span>
-        <ChevronDown className="w-6 h-6" />
       </div>
     </div>
   );

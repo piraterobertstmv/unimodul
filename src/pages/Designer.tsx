@@ -40,40 +40,50 @@ const Designer = () => {
               Estamos trabajando en una experiencia única de diseño en 3D para que puedas visualizar y personalizar tu espacio modular de manera interactiva.
             </p>
             
-            <div className="bg-secondary/5 p-8 rounded-lg mb-12 animate-scaleIn">
-              <div className="w-24 h-24 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center animate-lightning">
-                <Mail className="w-12 h-12 text-white" />
-              </div>
-              <h2 className="text-2xl font-bold mb-4">
-                Mantente Informado
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Suscríbete a nuestra newsletter para recibir artículos sobre construcción, real estate y las últimas novedades de Unimodul.
-              </p>
-              
-              <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-                <div className="flex gap-2">
-                  <Input
-                    type="email"
-                    placeholder="Tu correo electrónico"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="flex-1"
-                  />
-                  <Button 
-                    type="submit" 
-                    disabled={isLoading}
-                    className="bg-primary hover:bg-primary/90"
-                  >
-                    {isLoading ? (
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                    ) : (
-                      "Suscribirse"
-                    )}
-                  </Button>
+            <div 
+              className="bg-secondary/5 p-8 rounded-lg mb-12 animate-scaleIn relative group overflow-hidden"
+              style={{
+                backgroundImage: 'url("/lovable-uploads/aec0d1b8-68e7-41f9-8a16-1d724584e6f9.png")',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <div className="absolute inset-0 bg-secondary/5 group-hover:bg-secondary/90 transition-all duration-300"></div>
+              <div className="relative z-10">
+                <div className="w-24 h-24 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center animate-lightning">
+                  <Mail className="w-12 h-12 text-white" />
                 </div>
-              </form>
+                <h2 className="text-2xl font-bold mb-4 text-secondary group-hover:text-white transition-colors">
+                  Mantente Informado
+                </h2>
+                <p className="text-gray-600 mb-6 group-hover:text-white/90 transition-colors">
+                  Suscríbete a nuestra newsletter para recibir artículos sobre construcción, real estate y las últimas novedades de Unimodul.
+                </p>
+                
+                <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+                  <div className="flex gap-2">
+                    <Input
+                      type="email"
+                      placeholder="Tu correo electrónico"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      className="flex-1"
+                    />
+                    <Button 
+                      type="submit" 
+                      disabled={isLoading}
+                      className="bg-primary hover:bg-primary/90"
+                    >
+                      {isLoading ? (
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                      ) : (
+                        "Suscribirse"
+                      )}
+                    </Button>
+                  </div>
+                </form>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 text-left">

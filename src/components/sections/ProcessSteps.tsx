@@ -44,20 +44,15 @@ export const ProcessSteps = () => {
           ].map((step, index) => (
             <div 
               key={step.number}
-              className="relative bg-white rounded-lg p-8 shadow-lg opacity-0 translate-y-8 transition-all duration-700 h-full"
+              className="animate-on-scroll relative bg-white rounded-lg p-8 shadow-lg h-full"
               style={{ 
                 zIndex: 3 - index,
                 transitionDelay: `${index * 1000}ms`,
               }}
-              data-aos="fade-up"
-              data-aos-delay={index * 1000}
             >
               <div 
-                className="text-8xl font-bold text-primary/10 absolute -top-10 -left-4 z-0"
+                className="animate-on-scroll text-8xl font-bold text-primary/10 absolute -top-10 -left-4 z-0"
                 style={{
-                  opacity: 0,
-                  transform: 'translateY(20px)',
-                  transition: 'all 0.7s',
                   transitionDelay: `${(index * 1000) + 300}ms`
                 }}
               >

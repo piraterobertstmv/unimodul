@@ -71,7 +71,7 @@ const Campings = () => {
     {
       title: "Almacén de equipos",
       description: "Almacenamiento seguro para equipamiento",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Espacios multiusos",
@@ -86,7 +86,7 @@ const Campings = () => {
     {
       title: "Zona de carga eléctrica",
       description: "Puntos de recarga para vehículos eléctricos",
-      image: "https://images.unsplash.com/photo-1647398742521-652c3e47c527"
+      image: "https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -143,7 +143,7 @@ const Campings = () => {
                   >
                     <div className="relative h-48">
                       <img
-                        src={`${use.image}?auto=format&fit=crop&w=800&q=80`}
+                        src={use.image}
                         alt={use.title}
                         className="w-full h-full object-cover"
                       />

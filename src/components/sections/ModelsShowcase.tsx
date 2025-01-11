@@ -20,6 +20,12 @@ const models = [
     name: 'MOD.TWO',
     image: '/lovable-uploads/7f30f145-9c17-4375-84f4-bc50e7ae1e12.png',
     route: '/productos/mod-two'
+  },
+  {
+    id: 4,
+    name: 'MOD.LIBRE',
+    image: '/lovable-uploads/298a4051-327c-4efd-9e25-e6ab9933b6e9.png',
+    route: '/productos/mod-libre'
   }
 ];
 

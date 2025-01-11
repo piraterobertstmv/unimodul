@@ -9,15 +9,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const ModStudio = () => {
+const ModLibre = () => {
   const images = [
-    "/lovable-uploads/523c87b3-077e-4573-81c7-1671f244b05f.png",
-    "/lovable-uploads/18889e5c-bb5f-4c2c-ac5b-339249e5ac30.png",
-    "/lovable-uploads/a728b20e-07be-4a9b-8b51-2ddb48142593.png",
-    "/lovable-uploads/a83a0864-8f66-4615-9663-48d823a4f1e2.png",
-    "/lovable-uploads/f94c341d-98e0-4f19-bfd6-7bc970207b21.png",
-    "/lovable-uploads/0c99ccc6-6cc4-42ea-b623-e8acdef42f78.png",
-    "/lovable-uploads/6439b036-09a6-43e4-bc6b-c0d02f1dbc8c.png"
+    "/lovable-uploads/298a4051-327c-4efd-9e25-e6ab9933b6e9.png",
+    "/lovable-uploads/b8d7324b-eb18-4590-b2f2-9764ad2870f6.png",
+    "/lovable-uploads/c88e90b6-b364-41fb-b61f-beb182e090e0.png",
+    "/lovable-uploads/d95ca2e9-9e49-4242-a8e0-e6f9172ee91b.png"
   ];
 
   return (
@@ -28,9 +25,9 @@ const ModStudio = () => {
           <div className="max-w-6xl mx-auto">
             {/* Header Section */}
             <div className="text-center mb-12">
-              <h1 className="text-5xl font-light mb-6">MOD|STUDIO</h1>
+              <h1 className="text-5xl font-light mb-6">MOD|LIBRE</h1>
               <p className="text-3xl font-light text-gray-800">€900/m²</p>
-              <p className="text-lg text-gray-600 mt-2">20'x10' (6.1m x 3.0m)</p>
+              <p className="text-lg text-gray-600 mt-2">¡Sin límites!</p>
             </div>
 
             {/* Main Image Carousel */}
@@ -42,7 +39,7 @@ const ModStudio = () => {
                       <div className="relative w-full h-[600px]">
                         <img
                           src={image}
-                          alt={`Vista MOD.STUDIO ${index + 1}`}
+                          alt={`Vista MOD.LIBRE ${index + 1}`}
                           className="w-full h-full object-cover rounded-lg"
                         />
                       </div>
@@ -57,74 +54,57 @@ const ModStudio = () => {
             {/* Description Section */}
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div>
-                <h2 className="text-2xl font-light mb-4">ACERCA DE MOD STUDIO</h2>
+                <h2 className="text-2xl font-light mb-4">ACERCA DE MOD LIBRE</h2>
                 <p className="text-gray-600">
-                  El MOD STUDIO es nuestro modelo más versátil y compacto hasta la fecha. Perfecto como oficina en casa, casa de huéspedes o refugio en el jardín. Con su diseño elegante y acabados modernos, el MOD STUDIO ofrece tanto estilo como funcionalidad en un espacio más reducido.
+                  MOD LIBRE representa la máxima expresión de la versatilidad en construcción modular. Desde un compacto estudio hasta un majestuoso chalet de 300m², o incluso un complejo de 500 bungalows, las posibilidades son infinitas. Nos adaptamos a cualquier necesidad, visión o escala de proyecto que puedas imaginar.
                 </p>
               </div>
               <div>
                 <img
                   src={images[1]}
-                  alt="Vista adicional MOD.STUDIO"
+                  alt="Vista adicional MOD.LIBRE"
                   className="w-full h-[300px] object-cover rounded-lg"
                 />
-              </div>
-            </div>
-
-            {/* Specifications Grid */}
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
-              <div>
-                <h3 className="text-xl font-light mb-4">DIMENSIONES EXTERIORES</h3>
-                <p className="text-gray-600">20'x10' (6.1m)</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-light mb-4">CIMENTACIÓN</h3>
-                <p className="text-gray-600">Opciones disponibles de losa de concreto o cimentación elevada</p>
               </div>
             </div>
 
             {/* Features Grid */}
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div>
-                <h3 className="text-xl font-light mb-4">DISTRIBUCIÓN</h3>
+                <h3 className="text-xl font-light mb-4">POSIBILIDADES</h3>
                 <ul className="text-gray-600 space-y-2">
-                  <li>• Espacio Principal</li>
-                  <li>• Baño Completo</li>
-                  <li>• Cocineta</li>
+                  <li>• Estudios Compactos</li>
+                  <li>• Viviendas Unifamiliares</li>
+                  <li>• Chalets de Lujo</li>
+                  <li>• Complejos Residenciales</li>
+                  <li>• Desarrollos Turísticos</li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-light mb-4">OPCIONES DISPONIBLES</h3>
+                <h3 className="text-xl font-light mb-4">VENTAJAS</h3>
                 <ul className="text-gray-600 space-y-2">
-                  <li>• Acabados Interiores Personalizados</li>
-                  <li>• Integración Domótica</li>
-                  <li>• Preparación para Paneles Solares</li>
+                  <li>• Diseño Personalizado</li>
+                  <li>• Modularidad Total</li>
+                  <li>• Escalabilidad</li>
+                  <li>• Eficiencia Energética</li>
+                  <li>• Rapidez de Construcción</li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-light mb-4">CONSTRUCCIÓN</h3>
+                <h3 className="text-xl font-light mb-4">CARACTERÍSTICAS</h3>
                 <ul className="text-gray-600 space-y-2">
-                  <li>• Exterior Metálico Negro</li>
-                  <li>• Ventanas de Doble Acristalamiento</li>
-                  <li>• Paredes Aisladas</li>
-                  <li>• Terraza de Madera</li>
+                  <li>• Combinaciones Ilimitadas</li>
+                  <li>• Acabados Premium</li>
+                  <li>• Tecnología Avanzada</li>
+                  <li>• Sostenibilidad</li>
+                  <li>• Calidad Superior</li>
                 </ul>
               </div>
-            </div>
-
-            {/* Planos Section */}
-            <div className="mb-16">
-              <h3 className="text-xl font-light mb-4">PLANOS</h3>
-              <img
-                src="/lovable-uploads/0370276d-23f1-4ed1-aec4-12823772854d.png"
-                alt="Plano arquitectónico"
-                className="w-full object-contain"
-              />
             </div>
 
             {/* CTA Section */}
             <div className="bg-secondary text-white p-8 rounded-lg mb-16 transition-all duration-300 hover:animate-lightning">
-              <h2 className="text-2xl font-light mb-4 text-center">COMENCEMOS TU PROYECTO</h2>
+              <h2 className="text-2xl font-light mb-4 text-center">¿IMAGINAMOS JUNTOS TU PROYECTO?</h2>
               <div className="text-center">
                 <Link
                   to="/contacto"
@@ -138,7 +118,20 @@ const ModStudio = () => {
             {/* More Models Section */}
             <div>
               <h2 className="text-2xl font-light mb-8">MÁS MODELOS</h2>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-3 gap-8">
+                <Link to="/productos/mod-studio" className="group">
+                  <div className="relative overflow-hidden rounded-lg">
+                    <img
+                      src="/lovable-uploads/523c87b3-077e-4573-81c7-1671f244b05f.png"
+                      alt="MOD.STUDIO"
+                      className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                      <h3 className="text-white text-xl font-light">MOD|STUDIO</h3>
+                      <p className="text-white/80">€900/m²</p>
+                    </div>
+                  </div>
+                </Link>
                 <Link to="/productos/mod-one" className="group">
                   <div className="relative overflow-hidden rounded-lg">
                     <img
@@ -148,7 +141,7 @@ const ModStudio = () => {
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
                       <h3 className="text-white text-xl font-light">MOD|ONE</h3>
-                      <p className="text-white/80">€1,000/m²</p>
+                      <p className="text-white/80">€900/m²</p>
                     </div>
                   </div>
                 </Link>
@@ -161,7 +154,7 @@ const ModStudio = () => {
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
                       <h3 className="text-white text-xl font-light">MOD|TWO</h3>
-                      <p className="text-white/80">€1,000/m²</p>
+                      <p className="text-white/80">€900/m²</p>
                     </div>
                   </div>
                 </Link>
@@ -175,4 +168,4 @@ const ModStudio = () => {
   );
 };
 
-export default ModStudio;
+export default ModLibre;

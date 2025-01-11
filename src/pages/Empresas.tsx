@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import BusinessModuleUsesGrid from "@/components/empresas/BusinessModuleUsesGrid";
 
 const Empresas = () => {
   return (
@@ -9,7 +10,7 @@ const Empresas = () => {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 animate-fadeIn">Soluciones para Empresas</h1>
           
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-4xl mx-auto space-y-8 mb-12">
             <section className="animate-slideInLeft">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Espacios Comerciales del Futuro</h2>
               <p className="text-gray-600 mb-4 hover:text-gray-900 transition-colors duration-300">
@@ -41,25 +42,12 @@ const Empresas = () => {
                 </ul>
               </div>
             </section>
-
-            <section className="animate-scaleIn">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Aplicaciones Comerciales</h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center p-4 hover:bg-gray-50 rounded-lg transition-all duration-300 hover:-translate-y-1">
-                  <h3 className="font-bold mb-2">Oficinas</h3>
-                  <p className="text-gray-600">Espacios de trabajo modernos y eficientes</p>
-                </div>
-                <div className="text-center p-4 hover:bg-gray-50 rounded-lg transition-all duration-300 hover:-translate-y-1">
-                  <h3 className="font-bold mb-2">Retail</h3>
-                  <p className="text-gray-600">Locales comerciales adaptables</p>
-                </div>
-                <div className="text-center p-4 hover:bg-gray-50 rounded-lg transition-all duration-300 hover:-translate-y-1">
-                  <h3 className="font-bold mb-2">Showrooms</h3>
-                  <p className="text-gray-600">Espacios de exhibición impactantes</p>
-                </div>
-              </div>
-            </section>
           </div>
+
+          <section className="animate-scaleIn">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Usos Empresariales de Nuestros Módulos</h2>
+            <BusinessModuleUsesGrid />
+          </section>
         </div>
       </div>
       <Footer />

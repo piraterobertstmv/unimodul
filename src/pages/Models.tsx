@@ -23,6 +23,12 @@ const Products = () => {
       image: "/lovable-uploads/7f30f145-9c17-4375-84f4-bc50e7ae1e12.png",
       description: "Espacios amplios y versátiles para familias",
       route: "/productos/mod-two"
+    },
+    {
+      name: "MOD.LIBRE",
+      image: "/lovable-uploads/672045c4-0536-46b5-a56e-edcd010f1005.png",
+      description: "Infinitas posibilidades de combinación para cualquier proyecto",
+      route: "/productos/mod-libre"
     }
   ];
 
@@ -98,7 +104,7 @@ const Products = () => {
             Nuestros Modelos
           </h1>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {models.map((model, index) => (
               <div
                 key={model.name}

@@ -78,7 +78,9 @@ export const Footer = () => {
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/unimodul/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
             >
               <Linkedin className="w-5 h-5" />

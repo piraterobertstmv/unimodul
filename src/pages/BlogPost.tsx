@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 const blogPosts = {
   "futuro-modular": {
     title: "Transformando la construcción: El futuro es modular",
-    date: "20 de Marzo, 2024",
+    date: "01 de Septiembre, 2024",
     content: `
       El sector de la construcción está evolucionando a pasos agigantados. Las técnicas tradicionales, costosas y a menudo poco sostenibles, están dando paso a enfoques más modernos que combinan innovación, eficiencia y responsabilidad ambiental. En este nuevo panorama, la construcción modular se posiciona como una alternativa revolucionaria, marcando un antes y un después en la manera de concebir los espacios habitables.
 
@@ -52,7 +52,7 @@ const blogPosts = {
   },
   "ahorro-casas-modulares": {
     title: "Cómo las casas modulares ahorran energía, tiempo y costos",
-    date: "15 de Marzo, 2024",
+    date: "01 de Noviembre, 2024",
     content: `
       Las casas modulares representan una revolución en la construcción sostenible y eficiente. En este artículo, exploraremos cómo estas innovadoras estructuras no solo ahorran energía a través de su diseño optimizado y materiales de alta eficiencia, sino también cómo reducen significativamente los tiempos de construcción y los costos asociados.
 
@@ -80,7 +80,7 @@ const blogPosts = {
   },
   "glamping-inversion-rentable": {
     title: "El Auge del Glamping: Una Inversión rentable",
-    date: "10 de Marzo, 2024",
+    date: "01 de Enero, 2025",
     content: `
       El glamping, una fusión perfecta entre el glamour y el camping, se ha convertido en una de las tendencias más prometedoras en el sector turístico. Este artículo analiza por qué invertir en instalaciones de glamping puede ser una decisión financieramente inteligente.
 

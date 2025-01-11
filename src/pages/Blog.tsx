@@ -6,21 +6,21 @@ const blogPosts = [
   {
     title: "Transformando la construcción: El futuro es modular",
     description: "Descubre cómo la construcción modular está revolucionando el sector con innovación, eficiencia y sostenibilidad",
-    date: "20 de Marzo, 2024",
+    date: "01 de Septiembre, 2024",
     slug: "futuro-modular",
     image: "/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png"
   },
   {
     title: "Cómo las casas modulares ahorran energía, tiempo y costos",
     description: "Descubre las ventajas económicas y ambientales de las construcciones modulares modernas",
-    date: "15 de Marzo, 2024",
+    date: "01 de Noviembre, 2024",
     slug: "ahorro-casas-modulares",
     image: "/lovable-uploads/4eeca0a2-9ade-44a0-bd17-d6713900e92c.png"
   },
   {
     title: "El Auge del Glamping: Una Inversión rentable",
     description: "Análisis del creciente mercado del turismo de lujo en la naturaleza",
-    date: "10 de Marzo, 2024",
+    date: "01 de Enero, 2025",
     slug: "glamping-inversion-rentable",
     image: "/lovable-uploads/d95ca2e9-9e49-4242-a8e0-e6f9172ee91b.png"
   }

@@ -148,7 +148,7 @@ const ModStudio = () => {
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
                       <h3 className="text-white text-xl font-light">MOD|ONE</h3>
-                      <p className="text-white/80">€1,000/m²</p>
+                      <p className="text-white/80">€900/m²</p>
                     </div>
                   </div>
                 </Link>
@@ -161,7 +161,7 @@ const ModStudio = () => {
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
                       <h3 className="text-white text-xl font-light">MOD|TWO</h3>
-                      <p className="text-white/80">€1,000/m²</p>
+                      <p className="text-white/80">€900/m²</p>
                     </div>
                   </div>
                 </Link>

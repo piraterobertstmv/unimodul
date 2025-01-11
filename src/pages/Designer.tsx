@@ -3,7 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { Mail, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -17,10 +17,9 @@ const Designer = () => {
     setIsLoading(true);
 
     try {
-      // Insert the email into Supabase
       const { error } = await supabase
-        .from('emails')
-        .insert([{ email }]);
+        .from("emails")
+        .insert({ email });
 
       if (error) throw error;
 

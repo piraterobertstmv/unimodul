@@ -1,67 +1,99 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
-import { GoogleGenerativeAI } from "https://esm.sh/@google/generative-ai@0.1.3"
+import { corsHeaders } from "../_shared/cors.ts"
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Content-Type': 'application/json'
-}
+const SYSTEM_PROMPT = `You are a helpful virtual assistant for Unimodul, a modular construction company. Here are key details about our offerings:
+
+Models and Pricing:
+- MOD|STUDIO: 20'x10' (6.1m x 3.0m) at €900/m²
+- MOD|ONE: 25'x12' (7.6m x 3.7m) at €900/m²
+- MOD|TWO: Larger customizable spaces at €900/m²
+
+Key Features:
+- High-quality modular construction
+- Customizable designs and layouts
+- Sustainable materials and energy-efficient solutions
+- Professional installation and support
+- Flexible payment options
+- Quick construction timelines
+- Full architectural and engineering support
+- Building permit assistance
+
+Our values:
+- Innovation in modular design
+- Sustainability and eco-friendliness
+- Quality craftsmanship
+- Customer satisfaction
+- Transparency in pricing
+- Attention to detail
+
+Please provide accurate, helpful information about our products, pricing, and services. Be friendly and professional in your responses.`
 
 serve(async (req) => {
-  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
-    return new Response(null, { 
-      headers: corsHeaders,
-      status: 204
-    })
+    return new Response('ok', { headers: corsHeaders })
   }
 
   try {
-    // Validate request method
-    if (req.method !== 'POST') {
-      return new Response(
-        JSON.stringify({ error: 'Method not allowed' }),
-        { headers: corsHeaders, status: 405 }
-      )
-    }
-
     const { message } = await req.json()
-    
-    if (!message) {
-      return new Response(
-        JSON.stringify({ error: 'Message is required' }),
-        { headers: corsHeaders, status: 400 }
-      )
+
+    const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY')
+    if (!GEMINI_API_KEY) {
+      throw new Error('Missing Gemini API key')
     }
 
-    const genAI = new GoogleGenerativeAI(Deno.env.get('GEMINI_API_KEY') || '')
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" })
+    const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-goog-api-key': GEMINI_API_KEY,
+      },
+      body: JSON.stringify({
+        contents: [
+          {
+            role: 'user',
+            parts: [{ text: SYSTEM_PROMPT }]
+          },
+          {
+            role: 'model',
+            parts: [{ text: "Entendido. Estoy listo para ayudar con información sobre Unimodul." }]
+          },
+          {
+            role: 'user',
+            parts: [{ text: message }]
+          }
+        ],
+        generationConfig: {
+          temperature: 0.7,
+          topK: 40,
+          topP: 0.95,
+          maxOutputTokens: 1024,
+        },
+      }),
+    })
 
-    console.log('Sending message to Gemini:', message)
-    
-    const result = await model.generateContent(message)
-    const response = await result.response
-    const text = response.text()
-
-    console.log('Received response from Gemini:', text.substring(0, 100) + '...')
+    const data = await response.json()
+    const aiResponse = data.candidates[0].content.parts[0].text
 
     return new Response(
-      JSON.stringify({ response: text }),
-      { headers: corsHeaders }
+      JSON.stringify({ response: aiResponse }),
+      {
+        headers: {
+          ...corsHeaders,
+          'Content-Type': 'application/json',
+        },
+      },
     )
   } catch (error) {
-    console.error('Error in chat-with-gemini function:', error)
-    
+    console.error('Error:', error)
     return new Response(
-      JSON.stringify({ 
-        error: 'An error occurred while processing your request',
-        details: error.message 
-      }),
-      { 
-        headers: corsHeaders,
-        status: 500 
-      }
+      JSON.stringify({ error: error.message }),
+      {
+        status: 500,
+        headers: {
+          ...corsHeaders,
+          'Content-Type': 'application/json',
+        },
+      },
     )
   }
 })

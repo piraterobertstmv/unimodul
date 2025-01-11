@@ -59,7 +59,7 @@ export const Chatbot = () => {
   }
 
   return (
-    <Card className="fixed bottom-4 right-4 w-[350px] h-[500px] p-4 flex flex-col shadow-lg animate-in fade-in slide-in-from-bottom-4">
+    <Card className="fixed bottom-4 right-4 w-[350px] h-[500px] p-4 flex flex-col shadow-lg animate-in fade-in slide-in-from-bottom-4 bg-white">
       <div className="flex items-center justify-between gap-2 mb-4">
         <div className="flex items-center gap-2">
           <Bot className="w-6 h-6 text-primary" />

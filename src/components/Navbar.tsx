@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
@@ -39,7 +40,10 @@ export const Navbar = () => {
                 Contacto
               </Link>
             </div>
-            <Button className="bg-primary hover:bg-primary/90 text-white">
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-white"
+              onClick={() => navigate("/designer")}
+            >
               Diseñar Ahora
             </Button>
           </div>
@@ -95,7 +99,13 @@ export const Navbar = () => {
                 Contacto
               </Link>
               <div className="px-3 py-2">
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white">
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90 text-white"
+                  onClick={() => {
+                    navigate("/designer");
+                    setIsOpen(false);
+                  }}
+                >
                   Diseñar Ahora
                 </Button>
               </div>

@@ -9,17 +9,17 @@ export const ProductOfferings = () => {
           {
             title: "Estudio",
             description: "Perfecto para espacio personal y creatividad",
-            image: "/lovable-uploads/523c87b3-077e-4573-81c7-1671f244b05f.png",
+            image: "/lovable-uploads/6a48b2d3-32fe-425d-849d-4e8009682f8f.png",
           },
           {
             title: "Oficina",
             description: "Optimizado para ambientes de trabajo productivos",
-            image: "/lovable-uploads/9c9e36b7-8ce0-4ada-a28a-e483720a4b6f.png",
+            image: "/lovable-uploads/4eeca0a2-9ade-44a0-bd17-d6713900e92c.png",
           },
           {
             title: "Hogar",
             description: "Ideal para una vida familiar confortable",
-            image: "/lovable-uploads/7f30f145-9c17-4375-84f4-bc50e7ae1e12.png",
+            image: "/lovable-uploads/d95ca2e9-9e49-4242-a8e0-e6f9172ee91b.png",
           },
         ].map((product, index) => (
           <div

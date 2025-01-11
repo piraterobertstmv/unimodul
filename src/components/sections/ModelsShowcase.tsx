@@ -50,6 +50,7 @@ export const ModelsShowcase = () => {
   }, []);
 
   const handleModelClick = (route: string) => {
+    console.log('Navigating to:', route); // Add logging
     navigate(route);
   };
 

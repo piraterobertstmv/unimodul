@@ -50,7 +50,13 @@ export const ProcessSteps = () => {
                 animationDelay: `${index * 0.2}s`
               }}
             >
-              <div className="text-8xl font-bold text-primary/10 absolute -top-10 -left-4 z-0">
+              <div 
+                className="text-8xl font-bold text-primary/10 absolute -top-10 -left-4 z-0 opacity-0 animate-on-scroll"
+                style={{
+                  animationDelay: `${(index * 0.4) + 0.3}s`,
+                  transform: 'translateY(20px)',
+                }}
+              >
                 {step.number}
               </div>
               <div className="relative z-10">

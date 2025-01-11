@@ -50,7 +50,7 @@ const Designer = () => {
             >
               <div className="absolute inset-0 bg-secondary/5 group-hover:bg-secondary/90 transition-all duration-300"></div>
               <div className="relative z-10">
-                <div className="w-24 h-24 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center animate-lightning">
+                <div className="w-24 h-24 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center">
                   <Mail className="w-12 h-12 text-white" />
                 </div>
                 <h2 className="text-2xl font-bold mb-4 text-secondary group-hover:text-white transition-colors">

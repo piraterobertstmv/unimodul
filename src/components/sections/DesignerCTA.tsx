@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export const DesignerCTA = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative h-[500px]">
       <div
@@ -20,7 +23,10 @@ export const DesignerCTA = () => {
           <p className="text-xl text-white/90 mb-8">
             Diseña tu propio espacio modular con facilidad
           </p>
-          <Button className="cta-button hover:scale-105 transition-transform duration-300">
+          <Button 
+            className="cta-button hover:scale-105 transition-transform duration-300"
+            onClick={() => navigate("/designer")}
+          >
             Diseñar Ahora
           </Button>
         </div>

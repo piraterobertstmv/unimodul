@@ -24,6 +24,7 @@ import Particulares from "./pages/Particulares";
 import Campings from "./pages/Campings";
 import Empresas from "./pages/Empresas";
 import Inversores from "./pages/Inversores";
+import Designer from "./pages/Designer";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -84,6 +85,7 @@ const App = () => {
             <Route path="/campings" element={<Campings />} />
             <Route path="/empresas" element={<Empresas />} />
             <Route path="/inversores" element={<Inversores />} />
+            <Route path="/designer" element={<Designer />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

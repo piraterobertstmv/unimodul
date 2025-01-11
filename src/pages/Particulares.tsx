@@ -1,72 +1,121 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import { Link } from "react-router-dom";
+
+const useCards = [
+  {
+    title: "Estudio",
+    description: "Espacio ideal para trabajo remoto o estudio",
+    image: "/lovable-uploads/298a4051-327c-4efd-9e25-e6ab9933b6e9.png"
+  },
+  {
+    title: "Office/Sala de estar",
+    description: "Ambiente versátil para trabajo y relax",
+    image: "/lovable-uploads/6a48b2d3-32fe-425d-849d-4e8009682f8f.png"
+  },
+  {
+    title: "Garage",
+    description: "Protege tus vehículos con estilo",
+    image: "/lovable-uploads/39040f8f-8abc-474e-9e24-00dc29aa1562.png"
+  },
+  {
+    title: "Trastero",
+    description: "Organiza tu espacio adicional",
+    image: "/lovable-uploads/4eeca0a2-9ade-44a0-bd17-d6713900e92c.png"
+  },
+  {
+    title: "Zona de Relax",
+    description: "Jacuzzi, piscina climatizada o sauna",
+    image: "/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png"
+  },
+  {
+    title: "Sala de Juegos",
+    description: "Diversión para toda la familia",
+    image: "/lovable-uploads/6b3e84fa-84a0-44af-8e48-9ed284c56602.png"
+  },
+  {
+    title: "Casa de Invitados",
+    description: "Alojamiento cómodo para visitas",
+    image: "/lovable-uploads/9f46670e-d230-45c2-83fd-c50c86963d9f.png"
+  },
+  {
+    title: "Extensión Modular",
+    description: "Amplía tu espacio actual",
+    image: "/lovable-uploads/ad063972-7478-43de-bf95-957dde19de94.png"
+  },
+  {
+    title: "Sala de Cine",
+    description: "Tu propio espacio de entretenimiento",
+    image: "/lovable-uploads/b8d7324b-eb18-4590-b2f2-9764ad2870f6.png"
+  },
+  {
+    title: "Vinoteca/Bar",
+    description: "Espacio sofisticado para tu colección",
+    image: "/lovable-uploads/c88e90b6-b364-41fb-b61f-beb182e090e0.png"
+  },
+  {
+    title: "Gimnasio/Sala de Yoga",
+    description: "Mantente en forma desde casa",
+    image: "/lovable-uploads/d95ca2e9-9e49-4242-a8e0-e6f9172ee91b.png"
+  },
+  {
+    title: "Barbacoa Cubierta",
+    description: "Cocina al aire libre todo el año",
+    image: "/lovable-uploads/68070432-2518-4801-b3f4-37b58d2127f1.png"
+  }
+];
 
 const Particulares = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <div className="pt-24 pb-16">
+      <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 animate-fadeIn">
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 animate-fadeIn">
             Soluciones para Particulares
           </h1>
-          
-          <div className="max-w-4xl mx-auto space-y-8">
-            <section className="animate-slideInLeft">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Tu Hogar Modular Personalizado</h2>
-              <p className="text-gray-600 mb-4 hover:text-gray-900 transition-colors duration-300">
-                En Unimodul, entendemos que tu hogar es más que un espacio: es el reflejo de tu estilo de vida y aspiraciones.
-                Nuestras soluciones modulares para particulares ofrecen una alternativa moderna, eficiente y personalizable
-                a la construcción tradicional.
-              </p>
-            </section>
+          <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12 animate-fadeIn">
+            Descubre las múltiples posibilidades que nuestros módulos ofrecen para transformar tu espacio
+          </p>
 
-            <section className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-lg p-6 shadow-lg animate-slideInLeft hover:shadow-xl transition-all duration-300 hover:-translate-y-2" style={{ animationDelay: '200ms' }}>
-                <h3 className="text-xl font-bold mb-3">Ventajas Principales</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="animate-fadeIn hover:text-primary transition-colors duration-300" style={{ animationDelay: '400ms' }}>✓ Tiempo de construcción reducido (60% más rápido)</li>
-                  <li className="animate-fadeIn hover:text-primary transition-colors duration-300" style={{ animationDelay: '500ms' }}>✓ Costes controlados y transparentes</li>
-                  <li className="animate-fadeIn hover:text-primary transition-colors duration-300" style={{ animationDelay: '600ms' }}>✓ Personalización completa del diseño</li>
-                  <li className="animate-fadeIn hover:text-primary transition-colors duration-300" style={{ animationDelay: '700ms' }}>✓ Eficiencia energética superior</li>
-                  <li className="animate-fadeIn hover:text-primary transition-colors duration-300" style={{ animationDelay: '800ms' }}>✓ Calidad constructiva garantizada</li>
-                </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {useCards.map((card, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-scaleIn"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-xl font-bold text-white mb-2">{card.title}</h3>
+                  <p className="text-gray-200">{card.description}</p>
+                </div>
               </div>
-              <div className="bg-white rounded-lg p-6 shadow-lg animate-slideInRight hover:shadow-xl transition-all duration-300 hover:-translate-y-2" style={{ animationDelay: '300ms' }}>
-                <h3 className="text-xl font-bold mb-3">Características Destacadas</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="animate-fadeIn hover:text-primary transition-colors duration-300" style={{ animationDelay: '400ms' }}>✓ Diseños modernos y contemporáneos</li>
-                  <li className="animate-fadeIn hover:text-primary transition-colors duration-300" style={{ animationDelay: '500ms' }}>✓ Materiales de alta calidad</li>
-                  <li className="animate-fadeIn hover:text-primary transition-colors duration-300" style={{ animationDelay: '600ms' }}>✓ Aislamiento térmico y acústico superior</li>
-                  <li className="animate-fadeIn hover:text-primary transition-colors duration-300" style={{ animationDelay: '700ms' }}>✓ Proceso de construcción sostenible</li>
-                  <li className="animate-fadeIn hover:text-primary transition-colors duration-300" style={{ animationDelay: '800ms' }}>✓ Garantía extendida</li>
-                </ul>
-              </div>
-            </section>
+            ))}
 
-            <section className="animate-scaleIn" style={{ animationDelay: '400ms' }}>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Proceso Simplificado</h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center p-4 animate-fadeIn hover:bg-gray-50 rounded-lg transition-all duration-300 hover:-translate-y-1" style={{ animationDelay: '500ms' }}>
-                  <div className="text-3xl mb-2">1</div>
-                  <h3 className="font-bold mb-2">Diseño</h3>
-                  <p className="text-gray-600">Personaliza tu hogar según tus necesidades</p>
-                </div>
-                <div className="text-center p-4 animate-fadeIn hover:bg-gray-50 rounded-lg transition-all duration-300 hover:-translate-y-1" style={{ animationDelay: '600ms' }}>
-                  <div className="text-3xl mb-2">2</div>
-                  <h3 className="font-bold mb-2">Fabricación</h3>
-                  <p className="text-gray-600">Construcción controlada en fábrica</p>
-                </div>
-                <div className="text-center p-4 animate-fadeIn hover:bg-gray-50 rounded-lg transition-all duration-300 hover:-translate-y-1" style={{ animationDelay: '700ms' }}>
-                  <div className="text-3xl mb-2">3</div>
-                  <h3 className="font-bold mb-2">Instalación</h3>
-                  <p className="text-gray-600">Montaje rápido en tu terreno</p>
+            {/* Customization Card */}
+            <Link
+              to="/contacto"
+              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-scaleIn bg-secondary"
+            >
+              <div className="h-64 flex items-center justify-center p-6">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-white mb-4">¿Tienes otra idea en mente?</h3>
+                  <p className="text-gray-200 mb-6">Personaliza tu módulo según tus necesidades</p>
+                  <span className="inline-block bg-primary text-white px-6 py-3 rounded-lg group-hover:bg-primary/90 transition-colors">
+                    Contáctanos
+                  </span>
                 </div>
               </div>
-            </section>
+            </Link>
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   );

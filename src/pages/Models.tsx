@@ -30,28 +30,24 @@ const Products = () => {
     {
       title: "Particulares",
       description: "Soluciones habitacionales para individuos y familias",
-      icon: "🏠",
       route: "/particulares",
       bgImage: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&q=80"
     },
     {
       title: "Campings",
       description: "Módulos adaptados para instalaciones turísticas",
-      icon: "⛺",
       route: "/campings",
       bgImage: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80"
     },
     {
       title: "Empresas",
       description: "Espacios comerciales y oficinas modulares",
-      icon: "🏢",
       route: "/empresas",
       bgImage: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80"
     },
     {
       title: "Inversores",
       description: "Oportunidades de inversión en proyectos modulares",
-      icon: "💰",
       route: "/inversores",
       bgImage: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80"
     }
@@ -88,7 +84,6 @@ const Products = () => {
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
                   <div className="relative z-10 h-full flex flex-col justify-between">
-                    <div className="text-4xl mb-4">{category.icon}</div>
                     <div>
                       <h3 className="text-xl font-bold mb-2 text-white">{category.title}</h3>
                       <p className="text-gray-100">{category.description}</p>

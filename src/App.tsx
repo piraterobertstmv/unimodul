@@ -31,6 +31,9 @@ const queryClient = new QueryClient({
     queries: {
       retry: false,
       refetchOnWindowFocus: false,
+      onError: (error) => {
+        console.error('Query error:', error);
+      },
     },
   },
 });
@@ -51,7 +54,6 @@ const App = () => {
     const observerCallback: IntersectionObserverCallback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Add a small delay to ensure proper animation timing
           setTimeout(() => {
             entry.target.classList.add('visible');
           }, 100);
@@ -66,12 +68,10 @@ const App = () => {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    // Observe all animate-on-scroll elements
     document.querySelectorAll('.animate-on-scroll').forEach(element => {
       observer.observe(element);
     });
 
-    // Also observe section transitions
     document.querySelectorAll('.section-transition').forEach(element => {
       observer.observe(element);
     });
@@ -80,17 +80,14 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    // Initial setup
     setupIntersectionObserver();
 
-    // Re-run setup when route changes or new elements are added
     const routeChangeHandler = () => {
       setTimeout(setupIntersectionObserver, 300);
     };
 
     window.addEventListener('popstate', routeChangeHandler);
     
-    // Periodically check for new elements
     const intervalId = setInterval(setupIntersectionObserver, 2000);
 
     return () => {

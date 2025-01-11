@@ -3,6 +3,53 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 const blogPosts = {
+  "futuro-modular": {
+    title: "Transformando la construcción: El futuro es modular",
+    date: "20 de Marzo, 2024",
+    content: `
+      El sector de la construcción está evolucionando a pasos agigantados. Las técnicas tradicionales, costosas y a menudo poco sostenibles, están dando paso a enfoques más modernos que combinan innovación, eficiencia y responsabilidad ambiental. En este nuevo panorama, la construcción modular se posiciona como una alternativa revolucionaria, marcando un antes y un después en la manera de concebir los espacios habitables.
+
+      ¿Qué hace única a la construcción modular?
+
+      La construcción modular no es solo una mejora; es un cambio de paradigma. Basada en la fabricación de módulos estandarizados que se ensamblan para formar espacios personalizados, esta técnica permite crear desde viviendas asequibles hasta edificios comerciales, cumpliendo con altos estándares de diseño y funcionalidad.
+
+      Los materiales más comunes incluyen hormigón, madera y acero, aunque también se pueden emplear piedra o pizarra. Sin embargo, la clave está en el proceso: al fabricar los módulos en un entorno controlado y ensamblarlos en el sitio, se reducen tanto los tiempos como los costos, generando un impacto ambiental mínimo.
+
+      Ventajas que marcan la diferencia
+
+      La construcción modular destaca por ofrecer beneficios que responden directamente a las necesidades actuales del mercado. Entre los más relevantes, encontramos:
+
+      - Rapidez y cumplimiento de plazos: Con la construcción modular, los tiempos de ejecución pueden reducirse hasta un 50% en comparación con las técnicas tradicionales.
+      
+      - Costes altamente competitivos: El precio medio de una casa modular oscila entre 900 y 1.000 euros por metro cuadrado, mientras que las construcciones tradicionales suelen situarse entre 1.300 y 1.600 euros por metro cuadrado.
+
+      - Sostenibilidad en cada etapa del proceso: La construcción modular está alineada con los principios de sostenibilidad. Utiliza materiales reciclables y genera menos residuos que las técnicas tradicionales.
+
+      - Personalización al alcance de todos: Cada proyecto modular se adapta a las necesidades específicas de sus futuros ocupantes.
+
+      - Flexibilidad y escalabilidad: Una de las grandes ventajas de la construcción modular es su capacidad para crecer con el tiempo.
+
+      Nuestro Servicio "Llave en Mano"
+
+      En Unimodul, hacemos que el proceso sea tan sencillo como eficaz con nuestro servicio integral "llave en mano". Desde la primera idea hasta la entrega final, nos encargamos de todo para que tú solo te ocupes de disfrutar de los resultados.
+
+      ¿Qué incluye nuestro servicio "llave en mano"?
+
+      - Diseño personalizado
+      - Gestión de licencias
+      - Fabricación modular
+      - Preparación del terreno
+      - Transporte e instalación
+      - Revisión y entrega final
+
+      En Unimodul, lideramos esta revolución. Nuestras soluciones modulares combinan diseño, calidad y sostenibilidad a precios competitivos, permitiéndote hacer realidad tus proyectos sin comprometer ni el medio ambiente ni tu presupuesto.
+
+      Con precios desde 900 €/m², el futuro de la construcción es modular. 
+
+      🌿 Contáctanos y descubre cómo transformar tu idea en una realidad sostenible, eficiente y accesible.
+    `,
+    image: "/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png"
+  },
   "ahorro-casas-modulares": {
     title: "Cómo las casas modulares ahorran energía, tiempo y costos",
     date: "15 de Marzo, 2024",

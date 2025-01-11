@@ -4,6 +4,13 @@ import { Link } from "react-router-dom";
 
 const blogPosts = [
   {
+    title: "Transformando la construcción: El futuro es modular",
+    description: "Descubre cómo la construcción modular está revolucionando el sector con innovación, eficiencia y sostenibilidad",
+    date: "20 de Marzo, 2024",
+    slug: "futuro-modular",
+    image: "/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png"
+  },
+  {
     title: "Cómo las casas modulares ahorran energía, tiempo y costos",
     description: "Descubre las ventajas económicas y ambientales de las construcciones modulares modernas",
     date: "15 de Marzo, 2024",

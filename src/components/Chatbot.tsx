@@ -1,10 +1,8 @@
 import { useState } from "react"
+import { MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card } from "@/components/ui/card"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Send, Bot, X, MessageCircle } from "lucide-react"
 import { supabase } from "@/integrations/supabase/client"
+import { ChatWindow } from "./chat/ChatWindow"
 
 interface Message {
   text: string
@@ -59,61 +57,13 @@ export const Chatbot = () => {
   }
 
   return (
-    <Card className="fixed bottom-4 right-4 w-[350px] h-[500px] p-4 flex flex-col shadow-lg animate-in fade-in slide-in-from-bottom-4 bg-white">
-      <div className="flex items-center justify-between gap-2 mb-4">
-        <div className="flex items-center gap-2">
-          <Bot className="w-6 h-6 text-primary" />
-          <h3 className="font-semibold">Asistente Virtual</h3>
-        </div>
-        <Button 
-          variant="ghost" 
-          size="icon"
-          onClick={() => setIsOpen(false)}
-          className="h-8 w-8"
-        >
-          <X className="h-4 w-4" />
-        </Button>
-      </div>
-
-      <ScrollArea className="flex-1 pr-4">
-        <div className="space-y-4">
-          {messages.map((message, i) => (
-            <div
-              key={i}
-              className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
-            >
-              <div
-                className={`max-w-[80%] p-3 rounded-lg ${
-                  message.isBot
-                    ? 'bg-secondary text-secondary-foreground'
-                    : 'bg-primary text-primary-foreground'
-                }`}
-              >
-                {message.text}
-              </div>
-            </div>
-          ))}
-          {isLoading && (
-            <div className="flex justify-start">
-              <div className="max-w-[80%] p-3 rounded-lg bg-secondary text-secondary-foreground">
-                Escribiendo...
-              </div>
-            </div>
-          )}
-        </div>
-      </ScrollArea>
-
-      <form onSubmit={handleSubmit} className="mt-4 flex gap-2">
-        <Input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Escribe tu mensaje..."
-          disabled={isLoading}
-        />
-        <Button type="submit" size="icon" disabled={isLoading}>
-          <Send className="h-4 w-4" />
-        </Button>
-      </form>
-    </Card>
+    <ChatWindow
+      messages={messages}
+      input={input}
+      isLoading={isLoading}
+      onClose={() => setIsOpen(false)}
+      onInputChange={setInput}
+      onSubmit={handleSubmit}
+    />
   )
 }

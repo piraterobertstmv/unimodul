@@ -25,7 +25,14 @@ import Campings from "./pages/Campings";
 import Empresas from "./pages/Empresas";
 import Inversores from "./pages/Inversores";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => {
   useEffect(() => {
@@ -53,9 +60,9 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Sonner />
         <BrowserRouter>
+          <Toaster />
+          <Sonner />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/nosotros" element={<About />} />

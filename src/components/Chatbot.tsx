@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Send, Bot } from "lucide-react"
+import { Send, Bot, X, MessageCircle } from "lucide-react"
 import { supabase } from "@/integrations/supabase/client"
 
 interface Message {
@@ -17,6 +17,7 @@ export const Chatbot = () => {
   ])
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -46,11 +47,32 @@ export const Chatbot = () => {
     }
   }
 
+  if (!isOpen) {
+    return (
+      <Button
+        onClick={() => setIsOpen(true)}
+        className="fixed bottom-4 right-4 rounded-full w-12 h-12 p-0 shadow-lg hover:scale-105 transition-transform"
+      >
+        <MessageCircle className="w-6 h-6" />
+      </Button>
+    )
+  }
+
   return (
-    <Card className="fixed bottom-4 right-4 w-[350px] h-[500px] p-4 flex flex-col shadow-lg">
-      <div className="flex items-center gap-2 mb-4">
-        <Bot className="w-6 h-6 text-primary" />
-        <h3 className="font-semibold">Asistente Virtual</h3>
+    <Card className="fixed bottom-4 right-4 w-[350px] h-[500px] p-4 flex flex-col shadow-lg animate-in fade-in slide-in-from-bottom-4">
+      <div className="flex items-center justify-between gap-2 mb-4">
+        <div className="flex items-center gap-2">
+          <Bot className="w-6 h-6 text-primary" />
+          <h3 className="font-semibold">Asistente Virtual</h3>
+        </div>
+        <Button 
+          variant="ghost" 
+          size="icon"
+          onClick={() => setIsOpen(false)}
+          className="h-8 w-8"
+        >
+          <X className="h-4 w-4" />
+        </Button>
       </div>
 
       <ScrollArea className="flex-1 pr-4">

@@ -66,7 +66,9 @@ export const Footer = () => {
           </p>
           <div className="flex space-x-4">
             <a
-              href="#"
+              href="https://facebook.com/Unimodul"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
             >
               <Facebook className="w-5 h-5" />

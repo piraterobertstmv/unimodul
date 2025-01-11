@@ -14,7 +14,7 @@ const useCards = [
     image: "/lovable-uploads/6a48b2d3-32fe-425d-849d-4e8009682f8f.png"
   },
   {
-    title: "Garage",
+    title: "Garaje",
     description: "Protege tus vehículos con estilo",
     image: "/lovable-uploads/39040f8f-8abc-474e-9e24-00dc29aa1562.png"
   },

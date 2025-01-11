@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { Mail, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Designer = () => {
   const [email, setEmail] = useState("");
@@ -15,16 +16,30 @@ const Designer = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      // Insert the email into Supabase
+      const { error } = await supabase
+        .from('emails')
+        .insert([{ email }]);
 
-    toast({
-      title: "¡Suscripción exitosa!",
-      description: "Te mantendremos informado sobre nuestras novedades.",
-    });
+      if (error) throw error;
 
-    setEmail("");
-    setIsLoading(false);
+      toast({
+        title: "¡Suscripción exitosa!",
+        description: "Te mantendremos informado sobre nuestras novedades.",
+      });
+
+      setEmail("");
+    } catch (error) {
+      console.error('Error saving email:', error);
+      toast({
+        title: "Error",
+        description: "No se pudo procesar tu suscripción. Por favor, inténtalo de nuevo.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

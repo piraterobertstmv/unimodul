@@ -26,7 +26,7 @@ const Products = () => {
     },
     {
       name: "MOD.LIBRE",
-      image: "/lovable-uploads/672045c4-0536-46b5-a56e-edcd010f1005.png",
+      image: "/lovable-uploads/ff07105a-8e04-4192-a826-2b7695326c9a.png",
       description: "Infinitas posibilidades de combinación para cualquier proyecto",
       route: "/productos/mod-libre"
     }

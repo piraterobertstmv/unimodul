@@ -3,7 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Models from "./pages/Models";
@@ -47,27 +47,57 @@ const ScrollToTop = () => {
 };
 
 const App = () => {
-  useEffect(() => {
+  const setupIntersectionObserver = useCallback(() => {
     const observerCallback: IntersectionObserverCallback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          // Add a small delay to ensure proper animation timing
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, 100);
         }
       });
     };
 
     const observerOptions = {
-      threshold: 0.1
+      threshold: 0.1,
+      rootMargin: '50px'
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
+    // Observe all animate-on-scroll elements
     document.querySelectorAll('.animate-on-scroll').forEach(element => {
+      observer.observe(element);
+    });
+
+    // Also observe section transitions
+    document.querySelectorAll('.section-transition').forEach(element => {
       observer.observe(element);
     });
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    // Initial setup
+    setupIntersectionObserver();
+
+    // Re-run setup when route changes or new elements are added
+    const routeChangeHandler = () => {
+      setTimeout(setupIntersectionObserver, 300);
+    };
+
+    window.addEventListener('popstate', routeChangeHandler);
+    
+    // Periodically check for new elements
+    const intervalId = setInterval(setupIntersectionObserver, 2000);
+
+    return () => {
+      window.removeEventListener('popstate', routeChangeHandler);
+      clearInterval(intervalId);
+    };
+  }, [setupIntersectionObserver]);
 
   return (
     <QueryClientProvider client={queryClient}>

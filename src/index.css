@@ -14,68 +14,87 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans overflow-x-hidden;
+    @apply bg-background text-foreground font-sans overflow-x-hidden min-h-screen;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    @apply font-heading opacity-100;
+  }
+
+  img {
+    @apply max-w-full h-auto;
   }
 }
 
-.hero-overlay {
-  background: linear-gradient(rgba(30, 42, 74, 0.4), rgba(30, 42, 74, 0.4));
+/* Ensure content is visible by default */
+.animate-on-scroll,
+.section-transition {
+  opacity: 1;
+  transform: none;
+  will-change: opacity, transform;
 }
 
-.feature-card {
-  @apply transition-all duration-500 hover:shadow-lg hover:scale-105 hover:-translate-y-2;
-}
-
-.nav-link {
-  @apply text-gray-700 hover:text-primary transition-colors duration-200 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
-}
-
-.cta-button {
-  @apply bg-primary text-white px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-1 hover:animate-shake text-sm md:text-base;
-}
-
-.section-padding {
-  @apply py-8 md:py-16 lg:py-24;
-}
-
-.animate-on-scroll {
+/* Only apply animations if JS is enabled */
+.js .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s ease-out;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.animate-on-scroll.visible {
+.js .animate-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Add stagger effect for lists and grid items */
-.animate-on-scroll:nth-child(2) {
+.js .animate-on-scroll:nth-child(2) {
   transition-delay: 0.2s;
 }
 
-.animate-on-scroll:nth-child(3) {
+.js .animate-on-scroll:nth-child(3) {
   transition-delay: 0.4s;
 }
 
-.animate-on-scroll:nth-child(4) {
+.js .animate-on-scroll:nth-child(4) {
   transition-delay: 0.6s;
 }
 
-/* Sección de transición */
-.section-transition {
+/* Section transitions */
+.js .section-transition {
   opacity: 0;
   transform: translateY(50px);
-  transition: all 0.8s ease-out;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.section-transition.visible {
+.js .section-transition.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Hero overlay */
+.hero-overlay {
+  background: linear-gradient(rgba(30, 42, 74, 0.4), rgba(30, 42, 74, 0.4));
+}
+
+/* Feature card animations */
+.feature-card {
+  @apply transition-all duration-500 hover:shadow-lg hover:scale-105 hover:-translate-y-2;
+  will-change: transform;
+}
+
+/* Navigation link animations */
+.nav-link {
+  @apply text-gray-700 hover:text-primary transition-colors duration-200 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+}
+
+/* CTA button animations */
+.cta-button {
+  @apply bg-primary text-white px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-1 hover:animate-shake text-sm md:text-base;
+}
+
+/* Section padding */
+.section-padding {
+  @apply py-8 md:py-16 lg:py-24;
 }
 
 /* Mobile optimizations */
@@ -90,5 +109,21 @@
   
   .animate-on-scroll {
     transform: translateY(10px);
+  }
+
+  /* Reduce animation duration on mobile */
+  .js .animate-on-scroll,
+  .js .section-transition {
+    transition-duration: 0.4s;
+  }
+}
+
+/* Print styles */
+@media print {
+  .animate-on-scroll,
+  .section-transition {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

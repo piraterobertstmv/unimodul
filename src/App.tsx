@@ -2,8 +2,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect, useCallback } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ScrollToTop } from "./components/ScrollToTop";
+import { AnimationObserver } from "./components/AnimationObserver";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Models from "./pages/Models";
@@ -31,76 +32,22 @@ const queryClient = new QueryClient({
     queries: {
       retry: false,
       refetchOnWindowFocus: false,
-      onError: (error) => {
-        console.error('Query error:', error);
+      meta: {
+        onError: (error: Error) => {
+          console.error('Query error:', error);
+        },
       },
     },
   },
 });
 
-// ScrollToTop component to handle scroll restoration
-const ScrollToTop = () => {
-  const location = useLocation();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
-  
-  return null;
-};
-
 const App = () => {
-  const setupIntersectionObserver = useCallback(() => {
-    const observerCallback: IntersectionObserverCallback = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, 100);
-        }
-      });
-    };
-
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '50px'
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    document.querySelectorAll('.animate-on-scroll').forEach(element => {
-      observer.observe(element);
-    });
-
-    document.querySelectorAll('.section-transition').forEach(element => {
-      observer.observe(element);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    setupIntersectionObserver();
-
-    const routeChangeHandler = () => {
-      setTimeout(setupIntersectionObserver, 300);
-    };
-
-    window.addEventListener('popstate', routeChangeHandler);
-    
-    const intervalId = setInterval(setupIntersectionObserver, 2000);
-
-    return () => {
-      window.removeEventListener('popstate', routeChangeHandler);
-      clearInterval(intervalId);
-    };
-  }, [setupIntersectionObserver]);
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <BrowserRouter>
           <ScrollToTop />
+          <AnimationObserver />
           <Toaster />
           <Sonner />
           <Routes>

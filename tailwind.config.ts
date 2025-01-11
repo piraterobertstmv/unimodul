@@ -83,6 +83,11 @@ export default {
             opacity: "0.95",
             background: "linear-gradient(45deg, #1E2A4A 70%, #F97316 75%, #1E2A4A 80%)",
           }
+        },
+        shake: {
+          "0%, 100%": { transform: "translateX(0)" },
+          "10%, 30%, 50%, 70%, 90%": { transform: "translateX(-2px)" },
+          "20%, 40%, 60%, 80%": { transform: "translateX(2px)" },
         }
       },
       animation: {
@@ -94,6 +99,7 @@ export default {
         scaleIn: "scaleIn 0.5s ease-out forwards",
         float: "float 4s ease-in-out infinite",
         "lightning": "lightning 1.5s ease-in-out infinite",
+        "shake": "shake 0.5s ease-in-out",
       },
     },
   },

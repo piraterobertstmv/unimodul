@@ -9,7 +9,7 @@ export const Hero = () => {
           className="w-full md:w-[80%] h-full bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png')",
+              "url('/lovable-uploads/d95ca2e9-9e49-4242-a8e0-e6f9172ee91b.png')",
             transformStyle: "preserve-3d",
             perspective: "1000px",
           }}
@@ -22,9 +22,9 @@ export const Hero = () => {
       <div className="relative container mx-auto h-full flex items-center px-4">
         <div className="w-full flex justify-end mt-32 md:mt-32">
           <div className="text-3xl md:text-6xl font-bold tracking-wider animate-float flex flex-col items-start space-y-2 md:space-y-4">
-            <span className="text-white drop-shadow-lg">MODERN/</span>
-            <span className="text-white drop-shadow-lg">INNOVATIVE/</span>
-            <span className="text-white drop-shadow-lg">PREFAB.</span>
+            <span className="text-white drop-shadow-lg">MODERNO/</span>
+            <span className="text-white drop-shadow-lg">INNOVADOR/</span>
+            <span className="text-white drop-shadow-lg">PREFABRICADO.</span>
           </div>
         </div>
       </div>

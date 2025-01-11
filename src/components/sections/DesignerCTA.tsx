@@ -10,7 +10,7 @@ export const DesignerCTA = () => {
         className="absolute inset-0 bg-cover bg-center animate-scaleIn"
         style={{
           backgroundImage:
-            "url('/lovable-uploads/39040f8f-8abc-474e-9e24-00dc29aa1562.png')",
+            "url('/lovable-uploads/b8d7324b-eb18-4590-b2f2-9764ad2870f6.png')",
         }}
       >
         <div className="absolute inset-0 hero-overlay" />

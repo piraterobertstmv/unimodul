@@ -9,26 +9,50 @@ const About = () => {
         {/* Hero Section */}
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 animate-fadeIn">
-            Nuestra Historia
+            La Historia de Unimodul: Innovación y Sostenibilidad para un Futuro Modular
           </h1>
           
-          {/* New copy sections with proper spacing and styling */}
-          <div className="max-w-4xl mx-auto space-y-6 text-gray-600 mb-16">
-            <p className="text-lg animate-fadeIn delay-100">
-              En Unimodul ofrecemos viviendas modulares que destacan por su tecnología avanzada, con una eficiencia acústica y térmica superior. Nuestras casas cumplen con las normativas más estrictas de Europa, garantizando durabilidad y seguridad, todo a un costo menor que la construcción tradicional.
-            </p>
-            
-            <p className="text-lg animate-fadeIn delay-200">
-              Si buscas una solución moderna, eficiente y accesible, nuestras viviendas modulares son la opción ideal. Nuestras viviendas modulares se construyen con contenedores marítimos de alta resistencia, anclados a cimentaciones de hormigón armado para garantizar estabilidad en cualquier terreno. Este sistema ofrece una construcción rápida y adaptable, permitiendo que tu hogar crezca contigo.
-            </p>
-            
-            <p className="text-lg animate-fadeIn delay-300">
-              No solo vendemos casas, sino espacios innovadores, confortables y sostenibles. Descubre cómo nuestras soluciones modulares pueden ayudarte a crear el hogar ideal, diseñado a la medida de tus necesidades.
-            </p>
-            
-            <p className="text-lg animate-fadeIn delay-400">
-              Nuestro grupo empresarial goza de una mas que probada experiencia en el mercado de la construcción de viviendas. Más de tres años de promociones ya finalizadas, y con proyectos en marcha.
-            </p>
+          {/* Content sections with proper spacing and styling */}
+          <div className="max-w-4xl mx-auto space-y-8 text-gray-600 mb-16">
+            <div className="space-y-4 animate-fadeIn delay-100">
+              <p className="text-lg">
+                Unimodul nació de una idea visionaria: transformar la manera en que construimos para adaptarnos a las necesidades de un mundo en constante evolución. Nuestros fundadores, apasionados por la innovación tecnológica y comprometidos con el desarrollo sostenible, identificaron una problemática clara en el sector de la construcción: la ineficiencia, los altos costes y el impacto ambiental de los métodos tradicionales.
+              </p>
+              
+              <p className="text-lg">
+                La chispa que dio vida a Unimodul surgió al observar la revolución modular en otros sectores, como la tecnología y la fabricación, y cómo este enfoque podía aplicarse a la arquitectura. En 2018, con un equipo multidisciplinar de arquitectos, ingenieros y especialistas en sostenibilidad, comenzó la aventura de Unimodul, con el objetivo de democratizar el acceso a viviendas personalizables, eficientes y sostenibles.
+              </p>
+            </div>
+
+            <div className="space-y-4 animate-fadeIn delay-200">
+              <h2 className="text-2xl font-bold text-secondary mb-4">Nuestra Filosofía</h2>
+              <p className="text-lg">
+                En Unimodul creemos que la construcción no debe ser un proceso complejo, costoso y contaminante. Nuestra misión es simplificarlo y hacerlo accesible para todos. Diseñamos soluciones modulares que no solo son innovadoras, sino también amigables con el medio ambiente, adaptadas a las necesidades de las personas y capaces de evolucionar junto a ellas.
+              </p>
+            </div>
+
+            <div className="space-y-4 animate-fadeIn delay-300">
+              <h2 className="text-2xl font-bold text-secondary mb-4">Hacia Dónde Vamos</h2>
+              <p className="text-lg">
+                Hoy, Unimodul no es solo una empresa de construcción modular; es un referente en la transformación del sector. Estamos redefiniendo el futuro de la edificación con un enfoque centrado en:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-lg">
+                <li>Sostenibilidad: Implementamos materiales ecológicos y procesos responsables que minimizan el impacto ambiental.</li>
+                <li>Accesibilidad: Ofrecemos soluciones asequibles, desde 800 €/m², para que más personas puedan acceder a viviendas de calidad.</li>
+                <li>Innovación: Incorporamos tecnologías de última generación en diseño, fabricación y eficiencia energética para garantizar edificaciones de alto rendimiento.</li>
+                <li>Servicio Integral: Con nuestro modelo llave en mano, acompañamos a nuestros clientes en todo el proceso, desde el diseño hasta la entrega, asegurando una experiencia sin complicaciones.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4 animate-fadeIn delay-400">
+              <h2 className="text-2xl font-bold text-secondary mb-4">El Futuro Modular</h2>
+              <p className="text-lg">
+                Nuestra visión es convertirnos en líderes globales de la construcción modular, expandiéndonos a mercados internacionales y ampliando nuestra gama de soluciones: desde viviendas asequibles para familias y particulares hasta espacios de trabajo flexibles y proyectos de gran escala.
+              </p>
+              <p className="text-lg">
+                Creemos en un futuro donde cada edificio sea una solución sostenible y eficiente. En Unimodul, construimos más que viviendas; construimos sueños y posibilidades, poniendo al alcance de todos un estilo de vida más conectado con el planeta.
+              </p>
+            </div>
           </div>
         </div>
 

@@ -9,6 +9,7 @@ import { Footer } from "@/components/sections/Footer";
 import { ModelsShowcase } from "@/components/sections/ModelsShowcase";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Chatbot } from "@/components/Chatbot";
 
 const Index = () => {
   return (
@@ -101,6 +102,7 @@ const Index = () => {
       </section>
 
       <Footer />
+      <Chatbot />
     </div>
   );
 };

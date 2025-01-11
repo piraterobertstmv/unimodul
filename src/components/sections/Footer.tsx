@@ -58,10 +58,7 @@ export const Footer = () => {
               <Mail className="w-5 h-5 mr-2" /> info@unimodul.com
             </p>
             <p className="flex items-center mb-2">
-              <Phone className="w-5 h-5 mr-2" /> José Niñerola (Dir. Comercial)
-            </p>
-            <p className="flex items-center mb-2 pl-7">
-              +34 614 16 97 37
+              <Phone className="w-5 h-5 mr-2" /> +34 614 16 97 37
             </p>
           </div>
         </div>

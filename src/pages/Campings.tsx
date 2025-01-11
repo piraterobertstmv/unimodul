@@ -71,7 +71,7 @@ const Campings = () => {
     {
       title: "Almacén de equipos",
       description: "Almacenamiento seguro para equipamiento",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Espacios multiusos",
@@ -98,7 +98,6 @@ const Campings = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 animate-fadeIn">Soluciones para Campings</h1>
           
           <div className="max-w-7xl mx-auto space-y-16">
-            {/* Existing content */}
             <section className="animate-slideInLeft">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Moderniza tu Camping con Unimodul</h2>
               <p className="text-gray-600 mb-4 hover:text-gray-900 transition-colors duration-300">
@@ -131,7 +130,6 @@ const Campings = () => {
               </div>
             </section>
 
-            {/* New section for module uses */}
             <section className="animate-on-scroll">
               <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Múltiples Usos para tus Módulos</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

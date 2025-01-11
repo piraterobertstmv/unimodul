@@ -19,6 +19,7 @@ import Process from "./pages/Process";
 import ModStudio from "./pages/ModStudio";
 import ModOne from "./pages/ModOne";
 import ModTwo from "./pages/ModTwo";
+import ModLibre from "./pages/ModLibre";
 import Particulares from "./pages/Particulares";
 import Campings from "./pages/Campings";
 import Empresas from "./pages/Empresas";
@@ -62,6 +63,7 @@ const App = () => {
             <Route path="/productos/mod-studio" element={<ModStudio />} />
             <Route path="/productos/mod-one" element={<ModOne />} />
             <Route path="/productos/mod-two" element={<ModTwo />} />
+            <Route path="/productos/mod-libre" element={<ModLibre />} />
             <Route path="/historias" element={<Stories />} />
             <Route path="/historia-1" element={<SuccessStory1 />} />
             <Route path="/historia-2" element={<SuccessStory2 />} />

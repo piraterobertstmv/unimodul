@@ -3,6 +3,7 @@ import { MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { supabase } from "@/integrations/supabase/client"
 import { ChatWindow } from "./chat/ChatWindow"
+import { toast } from "sonner"
 
 interface Message {
   text: string
@@ -31,11 +32,19 @@ export const Chatbot = () => {
         body: { message: userMessage }
       })
 
-      if (error) throw error
+      if (error) {
+        console.error('Supabase function error:', error)
+        throw error
+      }
+
+      if (!data?.response) {
+        throw new Error('No response received from the assistant')
+      }
 
       setMessages(prev => [...prev, { text: data.response, isBot: true }])
     } catch (error) {
       console.error('Error:', error)
+      toast.error("Lo siento, ha ocurrido un error al procesar tu mensaje. Por favor, inténtalo de nuevo.")
       setMessages(prev => [...prev, { 
         text: "Lo siento, ha ocurrido un error. Por favor, inténtalo de nuevo.", 
         isBot: true 

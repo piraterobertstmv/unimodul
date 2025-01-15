@@ -24,27 +24,27 @@ export const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <div className="flex space-x-6">
-              <Link to="/about" className="nav-link">
-                About
+              <Link to="/nosotros" className="nav-link">
+                Nosotros
               </Link>
-              <Link to="/models" className="nav-link">
-                Models
+              <Link to="/modelos" className="nav-link">
+                Modelos
               </Link>
-              <Link to="/stories" className="nav-link">
-                Stories
+              <Link to="/historias" className="nav-link">
+                Historias
               </Link>
               <Link to="/blog" className="nav-link">
                 Blog
               </Link>
-              <Link to="/contact" className="nav-link">
-                Contact
+              <Link to="/contacto" className="nav-link">
+                Contacto
               </Link>
             </div>
             <Button 
               className="bg-primary hover:bg-primary/90 text-white"
               onClick={() => navigate("/designer")}
             >
-              Design Now
+              Diseñar Ahora
             </Button>
           </div>
 
@@ -64,25 +64,25 @@ export const Navbar = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
-                to="/about"
+                to="/nosotros"
                 className="block px-3 py-2 nav-link"
                 onClick={() => setIsOpen(false)}
               >
-                About
+                Nosotros
               </Link>
               <Link
-                to="/models"
+                to="/modelos"
                 className="block px-3 py-2 nav-link"
                 onClick={() => setIsOpen(false)}
               >
-                Models
+                Modelos
               </Link>
               <Link
-                to="/stories"
+                to="/historias"
                 className="block px-3 py-2 nav-link"
                 onClick={() => setIsOpen(false)}
               >
-                Stories
+                Historias
               </Link>
               <Link
                 to="/blog"
@@ -92,11 +92,11 @@ export const Navbar = () => {
                 Blog
               </Link>
               <Link
-                to="/contact"
+                to="/contacto"
                 className="block px-3 py-2 nav-link"
                 onClick={() => setIsOpen(false)}
               >
-                Contact
+                Contacto
               </Link>
               <div className="px-3 py-2">
                 <Button 
@@ -106,7 +106,7 @@ export const Navbar = () => {
                     setIsOpen(false);
                   }}
                 >
-                  Design Now
+                  Diseñar Ahora
                 </Button>
               </div>
             </div>

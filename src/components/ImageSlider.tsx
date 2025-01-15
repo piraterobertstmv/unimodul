@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
@@ -17,49 +17,77 @@ const images = [
 
 export const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set([0]));
+  const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
+      setCurrentIndex((prev) => {
+        const nextIndex = (prev + 1) % images.length;
+        // Preload next image
+        const img = new Image();
+        img.src = images[nextIndex];
+        setLoadedImages((prev) => new Set([...prev, nextIndex]));
+        return nextIndex;
+      });
     }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    setCurrentIndex((prev) => {
+      const newIndex = (prev - 1 + images.length) % images.length;
+      // Preload previous image
+      const img = new Image();
+      img.src = images[newIndex];
+      setLoadedImages((prev) => new Set([...prev, newIndex]));
+      return newIndex;
+    });
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+    setCurrentIndex((prev) => {
+      const newIndex = (prev + 1) % images.length;
+      // Preload next image
+      const img = new Image();
+      img.src = images[newIndex];
+      setLoadedImages((prev) => new Set([...prev, newIndex]));
+      return newIndex;
+    });
   };
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+    <div ref={sliderRef} className="relative w-full h-[500px] overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
       {images.map((image, index) => (
         <div
           key={image}
-          className={`absolute w-full h-full transition-all duration-700 ${
+          className={`absolute w-full h-full transition-all duration-500 ${
             index === currentIndex 
               ? "opacity-100 scale-100" 
               : "opacity-0 scale-95"
-          }`}
+          } ${loadedImages.has(index) ? "lazy-image loaded" : "lazy-image"}`}
+          style={{ willChange: "transform, opacity" }}
         >
           <img
-            src={image}
+            src={loadedImages.has(index) ? image : "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"}
+            data-src={image}
             alt={`Slide ${index + 1}`}
-            className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+            className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-[1.02]"
+            loading="lazy"
           />
         </div>
       ))}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-all duration-300 hover:scale-110"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary"
+        aria-label="Previous slide"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-all duration-300 hover:scale-110"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary"
+        aria-label="Next slide"
       >
         <ChevronRight className="w-6 h-6" />
       </button>
@@ -68,9 +96,10 @@ export const ImageSlider = () => {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 hover:scale-150 ${
+            className={`w-2 h-2 rounded-full transition-all duration-300 hover:scale-150 focus:outline-none ${
               index === currentIndex ? "bg-white scale-125" : "bg-white/50"
             }`}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>

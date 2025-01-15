@@ -1,13 +1,19 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useRef } from "react";
 
 export const AnimationObserver = () => {
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
   const setupIntersectionObserver = useCallback(() => {
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
     const observerCallback: IntersectionObserverCallback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
+          requestAnimationFrame(() => {
             entry.target.classList.add('visible');
-          }, 100);
+          });
         }
       });
     };
@@ -17,33 +23,27 @@ export const AnimationObserver = () => {
       rootMargin: '50px'
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    observerRef.current = new IntersectionObserver(observerCallback, observerOptions);
 
-    document.querySelectorAll('.animate-on-scroll').forEach(element => {
-      observer.observe(element);
+    document.querySelectorAll('.animate-on-scroll, .section-transition').forEach(element => {
+      observerRef.current?.observe(element);
     });
 
-    document.querySelectorAll('.section-transition').forEach(element => {
-      observer.observe(element);
-    });
-
-    return () => observer.disconnect();
+    return () => observerRef.current?.disconnect();
   }, []);
 
   useEffect(() => {
-    setupIntersectionObserver();
-
+    const observer = setupIntersectionObserver();
+    
     const routeChangeHandler = () => {
-      setTimeout(setupIntersectionObserver, 300);
+      setTimeout(setupIntersectionObserver, 100);
     };
 
     window.addEventListener('popstate', routeChangeHandler);
     
-    const intervalId = setInterval(setupIntersectionObserver, 2000);
-
     return () => {
       window.removeEventListener('popstate', routeChangeHandler);
-      clearInterval(intervalId);
+      observer?.();
     };
   }, [setupIntersectionObserver]);
 

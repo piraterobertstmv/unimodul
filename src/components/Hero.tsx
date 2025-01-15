@@ -1,44 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 export const Hero = () => {
-  const imageRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('loaded');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '50px',
-      }
-    );
-
-    if (imageRef.current) {
-      observer.observe(imageRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="relative min-h-[80vh] md:min-h-screen">
       <div className="absolute inset-0">
         <div
-          ref={imageRef}
-          className="w-full md:w-[80%] h-full bg-cover bg-center lazy-image"
+          className="w-full md:w-[80%] h-full bg-cover bg-center"
           style={{
             backgroundImage:
               "url('/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png')",
             transformStyle: "preserve-3d",
             perspective: "1000px",
-            willChange: "opacity, transform",
+            willChange: "transform",
           }}
         >
           <div className="absolute inset-0 hero-overlay" />

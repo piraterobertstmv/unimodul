@@ -20,7 +20,7 @@ const About = () => {
               </p>
               
               <p className="text-lg">
-                La chispa que dio vida a Unimodul surgió al observar la revolución modular en otros sectores, como la tecnología y la fabricación, y cómo este enfoque podía aplicarse a la arquitectura. En 2018, con un equipo multidisciplinar de arquitectos, ingenieros y especialistas en sostenibilidad, comenzó la aventura de Unimodul, con el objetivo de democratizar el acceso a viviendas personalizables, eficientes y sostenibles.
+                La chispa que dio vida a Unimodul surgió al observar la revolución modular en otros sectores, como la tecnología y la fabricación, y cómo este enfoque podía aplicarse a la arquitectura. En 2022, con un equipo multidisciplinar de arquitectos, ingenieros y especialistas en sostenibilidad, comenzó la aventura de Unimodul, con el objetivo de democratizar el acceso a viviendas personalizables, eficientes y sostenibles.
               </p>
             </div>
 
@@ -38,7 +38,7 @@ const About = () => {
               </p>
               <ul className="list-disc pl-6 space-y-2 text-lg">
                 <li>Sostenibilidad: Implementamos materiales ecológicos y procesos responsables que minimizan el impacto ambiental.</li>
-                <li>Accesibilidad: Ofrecemos soluciones asequibles, desde 800 €/m², para que más personas puedan acceder a viviendas de calidad.</li>
+                <li>Accesibilidad: Ofrecemos soluciones asequibles, desde 900 €/m², para que más personas puedan acceder a viviendas de calidad.</li>
                 <li>Innovación: Incorporamos tecnologías de última generación en diseño, fabricación y eficiencia energética para garantizar edificaciones de alto rendimiento.</li>
                 <li>Servicio Integral: Con nuestro modelo llave en mano, acompañamos a nuestros clientes en todo el proceso, desde el diseño hasta la entrega, asegurando una experiencia sin complicaciones.</li>
               </ul>

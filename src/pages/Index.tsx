@@ -10,6 +10,19 @@ import { ModelsShowcase } from "@/components/sections/ModelsShowcase";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Chatbot } from "@/components/Chatbot";
+import { GridMotion } from "@/components/ui/grid-motion";
+
+const projectImages = [
+  "/lovable-uploads/1a043806-2c67-413c-a10f-94186a2f2d4d.png",
+  "/lovable-uploads/8d98a78f-16e5-48db-b421-bc59180afb8d.png",
+  "/lovable-uploads/0d50dde9-4c44-42d4-a340-b6ed392f6b15.png",
+  "/lovable-uploads/b71df311-204d-4aa4-bbd9-282908bdfa10.png",
+  "/lovable-uploads/823e7735-0c07-4753-aa81-ad4dc64ff310.png",
+  "/lovable-uploads/38802d12-96bd-440a-a5b8-cded2c55d489.png",
+  "/lovable-uploads/b0eae7dd-eaf0-4b7f-9066-f105978a45bf.png",
+  "/lovable-uploads/18ecfaa9-87ec-4057-8517-d3fe6c165a33.png",
+  "/lovable-uploads/a0ff55f2-ff8a-4de6-ad6b-116d626ce13b.png"
+];
 
 const Index = () => {
   return (
@@ -36,6 +49,20 @@ const Index = () => {
           </h2>
           <div className="animate-on-scroll opacity-0" style={{ animationDelay: '200ms' }}>
             <ImageSlider />
+          </div>
+        </div>
+      </section>
+
+      {/* Project Gallery Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="animate-on-scroll opacity-0">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              Galería de Proyectos
+            </h2>
+            <div className="animate-on-scroll opacity-0" style={{ animationDelay: '200ms' }}>
+              <GridMotion images={projectImages} columns={3} />
+            </div>
           </div>
         </div>
       </section>

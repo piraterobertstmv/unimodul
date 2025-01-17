@@ -10,10 +10,19 @@ import { ModelsShowcase } from "@/components/sections/ModelsShowcase";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Chatbot } from "@/components/Chatbot";
+import { Helmet } from "react-helmet";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Unimodul | Casas Modulares Innovadoras y Sostenibles</title>
+        <meta name="description" content="Unimodul: Líderes en construcción modular sostenible. Diseñamos y construimos casas modulares personalizadas, espacios comerciales y soluciones habitacionales innovadoras." />
+        <meta property="og:title" content="Unimodul | Casas Modulares Innovadoras y Sostenibles" />
+        <meta property="og:description" content="Descubre nuestras soluciones modulares innovadoras para viviendas y espacios comerciales. Diseño personalizado y construcción sostenible." />
+        <meta property="og:image" content="/lovable-uploads/6acc550c-39ec-4392-85a1-79d319aeeb81.png" />
+        <link rel="icon" type="image/x-icon" href="/lovable-uploads/6acc550c-39ec-4392-85a1-79d319aeeb81.png" />
+      </Helmet>
       <Navbar />
       <Hero />
       

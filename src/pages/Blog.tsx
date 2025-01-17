@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const blogPosts = [
   {
@@ -29,6 +30,14 @@ const blogPosts = [
 const Blog = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>Blog | Unimodul</title>
+        <meta name="description" content="Explora nuestro blog sobre construcción modular, sostenibilidad y tendencias en viviendas. Artículos sobre innovación en construcción y diseño modular." />
+        <meta property="og:title" content="Blog | Unimodul" />
+        <meta property="og:description" content="Explora nuestro blog sobre construcción modular, sostenibilidad y tendencias en viviendas." />
+        <meta property="og:image" content="/lovable-uploads/6acc550c-39ec-4392-85a1-79d319aeeb81.png" />
+        <link rel="icon" type="image/x-icon" href="/lovable-uploads/6acc550c-39ec-4392-85a1-79d319aeeb81.png" />
+      </Helmet>
       <Navbar />
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4">

@@ -1,9 +1,18 @@
 import { Navbar } from "@/components/Navbar";
 import { Users, Heart, Target } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Sobre Nosotros | Unimodul</title>
+        <meta name="description" content="Descubre la historia de Unimodul: innovación en construcción modular, sostenibilidad y compromiso con la calidad desde 2022. Transformando el futuro de la edificación." />
+        <meta property="og:title" content="Sobre Nosotros | Unimodul" />
+        <meta property="og:description" content="Descubre la historia de Unimodul: innovación en construcción modular, sostenibilidad y compromiso con la calidad desde 2022." />
+        <meta property="og:image" content="/lovable-uploads/6acc550c-39ec-4392-85a1-79d319aeeb81.png" />
+        <link rel="icon" type="image/x-icon" href="/lovable-uploads/6acc550c-39ec-4392-85a1-79d319aeeb81.png" />
+      </Helmet>
       <Navbar />
       <div className="pt-24 pb-16">
         {/* Hero Section */}

@@ -9,6 +9,7 @@ import { useToast } from "@/components/ui/use-toast";
 import emailjs from '@emailjs/browser';
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Helmet } from "react-helmet";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres" }),
@@ -59,6 +60,14 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Contacto | Unimodul</title>
+        <meta name="description" content="Contacta con Unimodul para tu proyecto de construcción modular. Estamos aquí para ayudarte a crear el espacio perfecto. Consulta precios y opciones." />
+        <meta property="og:title" content="Contacto | Unimodul" />
+        <meta property="og:description" content="Contacta con Unimodul para tu proyecto de construcción modular. Consulta precios y opciones." />
+        <meta property="og:image" content="/lovable-uploads/6acc550c-39ec-4392-85a1-79d319aeeb81.png" />
+        <link rel="icon" type="image/x-icon" href="/lovable-uploads/6acc550c-39ec-4392-85a1-79d319aeeb81.png" />
+      </Helmet>
       <Navbar />
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4">

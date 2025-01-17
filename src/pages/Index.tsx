@@ -20,8 +20,8 @@ const Index = () => {
         <meta name="description" content="Unimodul: Líderes en construcción modular sostenible. Diseñamos y construimos casas modulares personalizadas, espacios comerciales y soluciones habitacionales innovadoras." />
         <meta property="og:title" content="Unimodul | Casas Modulares Innovadoras y Sostenibles" />
         <meta property="og:description" content="Descubre nuestras soluciones modulares innovadoras para viviendas y espacios comerciales. Diseño personalizado y construcción sostenible." />
-        <meta property="og:image" content="/lovable-uploads/6acc550c-39ec-4392-85a1-79d319aeeb81.png" />
-        <link rel="icon" type="image/x-icon" href="/lovable-uploads/6acc550c-39ec-4392-85a1-79d319aeeb81.png" />
+        <meta property="og:image" content="/lovable-uploads/a9dd5c9c-58e0-4df6-9c19-85abc78f043f.png" />
+        <link rel="icon" type="image/x-icon" href="/lovable-uploads/a9dd5c9c-58e0-4df6-9c19-85abc78f043f.png" />
       </Helmet>
       <Navbar />
       <Hero />

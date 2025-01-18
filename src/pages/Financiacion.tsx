@@ -1,8 +1,10 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Financiacion = () => {
+  const navigate = useNavigate();
+
   const options = [
     {
       title: "Particulares",
@@ -14,7 +16,7 @@ const Financiacion = () => {
       title: "Empresas",
       description: "Soluciones financieras para proyectos empresariales",
       image: "/lovable-uploads/39040f8f-8abc-474e-9e24-00dc29aa1562.png",
-      route: "/empresas"
+      route: "/financiacion-empresas"  // Updated this route to match the new page
     }
   ];
 
@@ -35,7 +37,7 @@ const Financiacion = () => {
               <Link
                 key={option.title}
                 to={option.route}
-                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-scaleIn h-[400px]"
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-scaleIn h-[400px] cursor-pointer"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <img

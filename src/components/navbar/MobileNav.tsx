@@ -26,7 +26,7 @@ export const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
           className="block px-3 py-2 nav-link"
           onClick={onClose}
         >
-          Modelos
+          Quién eres?
         </Link>
         <Link
           to="/financiacion"

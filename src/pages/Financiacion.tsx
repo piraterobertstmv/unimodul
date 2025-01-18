@@ -1,22 +1,20 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Financiacion = () => {
-  const navigate = useNavigate();
-
   const options = [
     {
       title: "Particulares",
       description: "Financiación personalizada para viviendas unifamiliares",
       image: "/lovable-uploads/6a48b2d3-32fe-425d-849d-4e8009682f8f.png",
-      route: "/particulares"
+      route: "/financiacion-particulares"
     },
     {
       title: "Empresas",
       description: "Soluciones financieras para proyectos empresariales",
       image: "/lovable-uploads/39040f8f-8abc-474e-9e24-00dc29aa1562.png",
-      route: "/financiacion-empresas"  // Updated this route to match the new page
+      route: "/financiacion-empresas"
     }
   ];
 

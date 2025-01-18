@@ -31,6 +31,7 @@ const Inversores = lazy(() => import("./pages/Inversores"));
 const Designer = lazy(() => import("./pages/Designer"));
 const Financiacion = lazy(() => import("./pages/Financiacion"));
 const FinanciacionEmpresas = lazy(() => import("./pages/FinanciacionEmpresas"));
+const FinanciacionParticulares = lazy(() => import("./pages/FinanciacionParticulares"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -86,6 +87,7 @@ const App = () => {
               <Route path="/designer" element={<Designer />} />
               <Route path="/financiacion" element={<Financiacion />} />
               <Route path="/financiacion-empresas" element={<FinanciacionEmpresas />} />
+              <Route path="/financiacion-particulares" element={<FinanciacionParticulares />} />
             </Routes>
           </Suspense>
         </BrowserRouter>

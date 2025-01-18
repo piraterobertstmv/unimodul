@@ -29,6 +29,13 @@ export const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
           Modelos
         </Link>
         <Link
+          to="/financiacion"
+          className="block px-3 py-2 nav-link"
+          onClick={onClose}
+        >
+          Financiación
+        </Link>
+        <Link
           to="/historias"
           className="block px-3 py-2 nav-link"
           onClick={onClose}

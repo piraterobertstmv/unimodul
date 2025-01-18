@@ -13,6 +13,9 @@ export const DesktopNav = () => {
         <Link to="/modelos" className="nav-link">
           Modelos
         </Link>
+        <Link to="/financiacion" className="nav-link">
+          Financiación
+        </Link>
         <Link to="/historias" className="nav-link">
           Historias
         </Link>

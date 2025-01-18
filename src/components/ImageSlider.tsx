@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Loader } from "lucide-react";
 
 const images = [
   "/lovable-uploads/6a48b2d3-32fe-425d-849d-4e8009682f8f.png",
@@ -18,42 +18,50 @@ const images = [
 export const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set([0]));
+  const [isLoading, setIsLoading] = useState(true);
   const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Preload initial and next image
+    const preloadImages = async () => {
+      setIsLoading(true);
+      try {
+        const imagePromises = [currentIndex, (currentIndex + 1) % images.length].map(
+          (index) =>
+            new Promise((resolve, reject) => {
+              const img = new Image();
+              img.src = images[index];
+              img.onload = () => {
+                setLoadedImages((prev) => new Set([...prev, index]));
+                resolve(null);
+              };
+              img.onerror = reject;
+            })
+        );
+        await Promise.all(imagePromises);
+      } catch (error) {
+        console.error('Error preloading images:', error);
+      }
+      setIsLoading(false);
+    };
+
+    preloadImages();
+
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => {
-        const nextIndex = (prev + 1) % images.length;
-        // Preload next image
-        const img = new Image();
-        img.src = images[nextIndex];
-        setLoadedImages((prev) => new Set([...prev, nextIndex]));
-        return nextIndex;
-      });
+      setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 5000);
+
     return () => clearInterval(timer);
-  }, []);
+  }, [currentIndex]);
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => {
-      const newIndex = (prev - 1 + images.length) % images.length;
-      // Preload previous image
-      const img = new Image();
-      img.src = images[newIndex];
-      setLoadedImages((prev) => new Set([...prev, newIndex]));
-      return newIndex;
-    });
+    const newIndex = (currentIndex - 1 + images.length) % images.length;
+    setCurrentIndex(newIndex);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => {
-      const newIndex = (prev + 1) % images.length;
-      // Preload next image
-      const img = new Image();
-      img.src = images[newIndex];
-      setLoadedImages((prev) => new Set([...prev, newIndex]));
-      return newIndex;
-    });
+    const newIndex = (currentIndex + 1) % images.length;
+    setCurrentIndex(newIndex);
   };
 
   return (
@@ -68,6 +76,11 @@ export const ImageSlider = () => {
           } ${loadedImages.has(index) ? "lazy-image loaded" : "lazy-image"}`}
           style={{ willChange: "transform, opacity" }}
         >
+          {isLoading && index === currentIndex && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+              <Loader className="w-8 h-8 animate-spin text-primary" />
+            </div>
+          )}
           <img
             src={loadedImages.has(index) ? image : "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"}
             data-src={image}

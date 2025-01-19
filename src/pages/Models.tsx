@@ -5,33 +5,6 @@ import { useNavigate } from "react-router-dom";
 const Products = () => {
   const navigate = useNavigate();
   
-  const models = [
-    {
-      name: "MOD.STUDIO",
-      image: "/lovable-uploads/523c87b3-077e-4573-81c7-1671f244b05f.png",
-      description: "Diseño moderno y funcional para espacios creativos",
-      route: "/productos/mod-studio"
-    },
-    {
-      name: "MOD.ONE",
-      image: "/lovable-uploads/9c9e36b7-8ce0-4ada-a28a-e483720a4b6f.png",
-      description: "Solución compacta y eficiente para viviendas unifamiliares",
-      route: "/productos/mod-one"
-    },
-    {
-      name: "MOD.TWO",
-      image: "/lovable-uploads/7f30f145-9c17-4375-84f4-bc50e7ae1e12.png",
-      description: "Espacios amplios y versátiles para familias",
-      route: "/productos/mod-two"
-    },
-    {
-      name: "MOD.LIBRE",
-      image: "/lovable-uploads/ff07105a-8e04-4192-a826-2b7695326c9a.png",
-      description: "Infinitas posibilidades de combinación para cualquier proyecto",
-      route: "/productos/mod-libre"
-    }
-  ];
-
   const categories = [
     {
       title: "Particulares",
@@ -59,9 +32,28 @@ const Products = () => {
     }
   ];
 
-  const handleModelClick = (route: string) => {
-    navigate(route);
-  };
+  const benefits = [
+    {
+      title: "Oficina en Casa",
+      description: "Transforma tu jardín en un espacio de trabajo profesional sin obras invasivas. Instalación en días, no meses.",
+      icon: "🏢"
+    },
+    {
+      title: "Sala de Estar Adicional",
+      description: "Crea un oasis de tranquilidad separado de la casa principal. Perfecto para relajarse o entretener invitados.",
+      icon: "🛋️"
+    },
+    {
+      title: "Estudio Creativo",
+      description: "Un espacio dedicado para artistas, músicos o cualquier pasión creativa, con luz natural y aislamiento acústico.",
+      icon: "🎨"
+    },
+    {
+      title: "Suite para Invitados",
+      description: "Ofrece privacidad y confort a tus visitantes sin grandes reformas en tu hogar principal.",
+      icon: "🛏️"
+    }
+  ];
 
   const handleCategoryClick = (route: string) => {
     navigate(route);
@@ -100,37 +92,34 @@ const Products = () => {
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 animate-fadeIn">
-            Nuestros Modelos
-          </h1>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {models.map((model, index) => (
-              <div
-                key={model.name}
-                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:scale-[1.02]"
-                style={{ animationDelay: `${index * 100}ms` }}
-                onClick={() => handleModelClick(model.route)}
-              >
-                <img
-                  src={model.image}
-                  alt={model.name}
-                  className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">{model.name}</h3>
+          <div className="max-w-4xl mx-auto mb-16">
+            <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 animate-fadeIn">
+              La Diferencia Unimodul
+            </h3>
+            <p className="text-lg text-gray-700 mb-8 animate-fadeIn delay-100">
+              Construir con Unimodul significa elegir eficiencia, sostenibilidad y rapidez. Mientras la construcción tradicional puede llevar meses de obras, ruido y molestias, nuestros módulos se instalan en cuestión de días, minimizando el impacto en tu vida diaria.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+              {benefits.map((benefit, index) => (
+                <div
+                  key={benefit.title}
+                  className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-fadeIn"
+                  style={{ animationDelay: `${(index + 1) * 150}ms` }}
+                >
+                  <div className="text-4xl mb-4">{benefit.icon}</div>
+                  <h4 className="text-xl font-bold mb-3">{benefit.title}</h4>
+                  <p className="text-gray-600">{benefit.description}</p>
                 </div>
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center backdrop-blur-sm">
-                  <div className="text-white text-center p-6 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500">
-                    <h3 className="text-2xl font-bold mb-4 animate-fadeIn">{model.name}</h3>
-                    <p className="mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{model.description}</p>
-                    <button className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
-                      Más Información
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className="text-center mt-12 animate-fadeIn delay-500">
+              <p className="text-lg text-gray-700 mb-6">
+                Con Unimodul, transformas tu espacio sin el caos de la construcción tradicional. Nuestros módulos son sostenibles, eficientes energéticamente y se adaptan perfectamente a tus necesidades.
+              </p>
+              <button className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                Descubre más
+              </button>
+            </div>
           </div>
         </div>
       </div>

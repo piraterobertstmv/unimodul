@@ -64,32 +64,27 @@ const Products = () => {
       <Navbar />
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4">
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fadeIn">
-              Soluciones para cada necesidad
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {categories.map((category, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {categories.map((category, index) => (
+              <div
+                key={category.title}
+                className="relative bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer overflow-hidden group h-64"
+                style={{ animationDelay: `${index * 100}ms` }}
+                onClick={() => handleCategoryClick(category.route)}
+              >
                 <div
-                  key={category.title}
-                  className="relative bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer overflow-hidden group h-64"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                  onClick={() => handleCategoryClick(category.route)}
-                >
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-                    style={{ backgroundImage: `url(${category.bgImage})` }}
-                  />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
-                  <div className="relative z-10 h-full flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-xl font-bold mb-2 text-white">{category.title}</h3>
-                      <p className="text-gray-100">{category.description}</p>
-                    </div>
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${category.bgImage})` }}
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
+                <div className="relative z-10 h-full flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-white">{category.title}</h3>
+                    <p className="text-gray-100">{category.description}</p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
           <div className="max-w-4xl mx-auto mb-16">
@@ -119,7 +114,10 @@ const Products = () => {
               <p className="text-lg text-gray-700 mb-6">
                 Con Unimodul, transformas tu espacio sin el caos de la construcción tradicional. Nuestros módulos son sostenibles, eficientes energéticamente y se adaptan perfectamente a tus necesidades.
               </p>
-              <button className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+              <button 
+                onClick={() => navigate('/contacto')}
+                className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+              >
                 Descubre más
               </button>
             </div>

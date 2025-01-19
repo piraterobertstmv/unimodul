@@ -11,7 +11,7 @@ export const DesktopNav = () => {
           Nosotros
         </Link>
         <Link to="/modelos" className="nav-link">
-          Quién eres?
+          ¿Quién eres?
         </Link>
         <Link to="/financiacion" className="nav-link">
           Financiación

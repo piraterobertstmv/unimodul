@@ -15,6 +15,12 @@ const Financiacion = () => {
       description: "Soluciones financieras para proyectos empresariales",
       image: "/lovable-uploads/39040f8f-8abc-474e-9e24-00dc29aa1562.png",
       route: "/financiacion-empresas"
+    },
+    {
+      title: "Inversores",
+      description: "Oportunidades de inversión con alta rentabilidad",
+      image: "/lovable-uploads/9c9e36b7-8ce0-4ada-a28a-e483720a4b6f.png",
+      route: "/financiacion-inversores"
     }
   ];
 
@@ -30,7 +36,7 @@ const Financiacion = () => {
             Descubre nuestras opciones de financiación adaptadas a tus necesidades
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {options.map((option, index) => (
               <Link
                 key={option.title}

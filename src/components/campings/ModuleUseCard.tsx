@@ -17,7 +17,7 @@ const ModuleUseCard = ({ title, description, image, index }: ModuleUseCardProps)
     >
       <div className="relative h-48">
         <img
-          src={image}
+          src="/lovable-uploads/c700b9c1-21f0-4248-9634-0b12f1073006.png"
           alt={title}
           className="w-full h-full object-cover"
         />

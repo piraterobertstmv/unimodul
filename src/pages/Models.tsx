@@ -64,7 +64,7 @@ const Products = () => {
       <Navbar />
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
             {categories.map((category, index) => (
               <div
                 key={category.title}
@@ -87,7 +87,7 @@ const Products = () => {
             ))}
           </div>
 
-          <div className="max-w-4xl mx-auto mb-16">
+          <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold text-center mb-4 animate-fadeIn">
               Construcción Modular: La Opción Inteligente
             </h3>

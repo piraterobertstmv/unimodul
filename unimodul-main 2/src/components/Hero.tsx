@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ImageWithFallback } from "./ui/image-with-fallback";
+import { Helmet } from "react-helmet";
 
 export const Hero = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -14,6 +15,10 @@ export const Hero = () => {
 
   return (
     <div className="relative min-h-[80vh] md:min-h-screen">
+      <Helmet>
+        <title>Unimodul - Modern, Innovative, Prefab Homes</title>
+        <meta name="description" content="Explore our modern and innovative prefab homes at Unimodul. Discover sustainable and customizable modular living solutions." />
+      </Helmet>
       <div className="absolute inset-0">
         <div className="w-full md:w-[80%] h-full relative">
           <ImageWithFallback

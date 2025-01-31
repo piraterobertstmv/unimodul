@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ImageWithFallback } from "./ui/image-with-fallback";
 
 export const Hero = () => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload the hero image
+    const img = new Image();
+    img.src = '/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png';
+    img.onload = () => setIsImageLoaded(true);
+  }, []);
+
   return (
     <div className="relative min-h-[80vh] md:min-h-screen">
       <div className="absolute inset-0">
-        <div
-          className="w-full md:w-[80%] h-full bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png')",
-            transformStyle: "preserve-3d",
-            perspective: "1000px",
-            willChange: "transform",
-          }}
-        >
+        <div className="w-full md:w-[80%] h-full relative">
+          <ImageWithFallback
+            src="/lovable-uploads/76932e9e-eba3-48b4-90f1-a187a6707700.png"
+            alt="Unimodul - Viviendas Modulares Sostenibles"
+            className="w-full h-full"
+            style={{
+              transformStyle: "preserve-3d",
+              perspective: "1000px",
+              willChange: "transform",
+              opacity: isImageLoaded ? 1 : 0,
+              transition: "opacity 0.5s ease-in-out",
+            }}
+          />
           <div className="absolute inset-0 hero-overlay" />
         </div>
         <div className="absolute right-0 top-0 w-full md:w-[20%] h-20 md:h-full bg-black" />
